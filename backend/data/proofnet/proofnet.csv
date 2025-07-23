@@ -24,7 +24,7 @@ $$
 
 But this is absurd, since 2 cannot be a multiple of 4 .
 
-\end{proof}","Suppose $m^2=12 n^2$, where $m$ and $n$ have no common factor. It follows that $m$ must be even, and therefore $n$ must be odd. Let $m=2 r$. Then we have $r^2=3 n^2$, so that $r$ is also odd. Let $r=2 s+1$ and $n=2 t+1$. Then",ASSUME
+\end{proof}","Suppose $m^2=12 n^2$, where $m$ and $n$ have no common factor. It follows that $m$ must be even, and therefore $n$ must be odd. Let $m=2 r$. Then we have $r^2=3 n^2$, so that $r$ is also odd. Let $r=2 s+1$ and $n=2 t+1$. Then",CONCLUDE
 "Let $A$ be a nonempty set of real numbers which is bounded below. Let $-A$ be the set of all numbers $-x$, where $x \in A$. Prove that $\inf A=-\sup (-A)$.","\begin{proof}
 
     We need to prove that $-\sup (-A)$ is the greatest lower bound of $A$. For brevity, let $\alpha=-\sup (-A)$. We need to show that $\alpha \leq x$ for all $x \in A$ and $\alpha \geq \beta$ if $\beta$ is any lower bound of $A$.
@@ -37,12 +37,12 @@ Suppose $x \in A$. Then, $-x \in-A$, and, hence $-x \leq \sup (-A)$. It follows 
 
 Now let $\beta$ be any lower bound of $A$. This means $\beta \leq x$ for all $x$ in $A$. Hence $-x \leq-\beta$ for all $x \in A$, which says $y \leq-\beta$ for all $y \in-A$. This means $-\beta$ is an upper bound of $-A$. Hence $-\beta \geq \sup (-A)$ by definition of sup, i.e., $\beta \leq-\sup (-A)$, and so $-\sup (-A)$ is the greatest lower bound of $A$.
 
-\end{proof}","We need to prove that $-\sup (-A)$ is the greatest lower bound of $A$. For brevity, let $\alpha=-\sup (-A)$. We need to show that $\alpha \leq x$ for all $x \in A$ and $\alpha \geq \beta$ if $\beta$ is any lower bound of $A$.",UNKNOWN
+\end{proof}","We need to prove that $-\sup (-A)$ is the greatest lower bound of $A$. For brevity, let $\alpha=-\sup (-A)$. We need to show that $\alpha \leq x$ for all $x \in A$ and $\alpha \geq \beta$ if $\beta$ is any lower bound of $A$.",LET
 "If $z$ is a complex number, prove that there exists an $r\geq 0$ and a complex number $w$ with $| w | = 1$ such that $z = rw$.","\begin{proof}
 
     If $z=0$, we take $r=0, w=1$. (In this case $w$ is not unique.) Otherwise we take $r=|z|$ and $w=z /|z|$, and these choices are unique, since if $z=r w$, we must have $r=r|w|=|r w|=|z|, z / r$
 
-\end{proof}","If $z=0$, we take $r=0, w=1$. (In this case $w$ is not unique.) Otherwise we take $r=|z|$ and $w=z /|z|$, and these choices are unique, since if $z=r w$, we must have $r=r|w|=|r w|=|z|, z / r$",UNKNOWN
+\end{proof}","If $z=0$, we take $r=0, w=1$. (In this case $w$ is not unique.) Otherwise we take $r=|z|$ and $w=z /|z|$, and these choices are unique, since if $z=r w$, we must have $r=r|w|=|r w|=|z|, z / r$",CASE_ANALYSIS
 "If $x, y$ are complex, prove that $||x|-|y|| \leq |x-y|$.","\begin{proof}
 
     Since $x=x-y+y$, the triangle inequality gives
@@ -55,7 +55,7 @@ $$
 
 so that $|x|-|y| \leq|x-y|$. Similarly $|y|-|x| \leq|x-y|$. Since $|x|-|y|$ is a real number we have either ||$x|-| y||=|x|-|y|$ or ||$x|-| y||=|y|-|x|$. In either case, we have shown that ||$x|-| y|| \leq|x-y|$.
 
-\end{proof}","Since $x=x-y+y$, the triangle inequality gives",UNKNOWN
+\end{proof}","Since $x=x-y+y$, the triangle inequality gives",EQUALITY
 "Suppose $k \geq 3, x, y \in \mathbb{R}^k, |x - y| = d > 0$, and $r > 0$. Prove that if $2r > d$, there are infinitely many $z \in \mathbb{R}^k$ such that $|z-x|=|z-y|=r$.","\begin{proof}
 
     (a) Let w be any vector satisfying the following two equations:
@@ -100,12 +100,12 @@ $$
 
 and a similar relation holds for $|z-y|^2$.
 
-\end{proof}",(a) Let w be any vector satisfying the following two equations:,UNKNOWN
+\end{proof}",(a) Let w be any vector satisfying the following two equations:,LET
 "If $k \geq 2$ and $\mathbf{x} \in R^{k}$, prove that there exists $\mathbf{y} \in R^{k}$ such that $\mathbf{y} \neq 0$ but $\mathbf{x} \cdot \mathbf{y}=0$","\begin{proof}
 
     If $\mathbf{x}$ has any components equal to 0 , then $\mathbf{y}$ can be taken to have the corresponding components equal to 1 and all others equal to 0 . If all the components of $\mathbf{x}$ are nonzero, $\mathbf{y}$ can be taken as $\left(-x_2, x_1, 0, \ldots, 0\right)$. This is, of course, not true when $k=1$, since the product of two nonzero real numbers is nonzero.
 
-\end{proof}","If $\mathbf{x}$ has any components equal to 0 , then $\mathbf{y}$ can be taken to have the corresponding components equal to 1 and all others equal to 0 . If all the components of $\mathbf{x}$ are nonzero, $\mathbf{y}$ can be taken as $\left(-x_2, x_1, 0, \ldots, 0\right)$. This is, of course, not true when $k=1$, since the product of two nonzero real numbers is nonzero.",ASSUME
+\end{proof}","If $\mathbf{x}$ has any components equal to 0 , then $\mathbf{y}$ can be taken to have the corresponding components equal to 1 and all others equal to 0 . If all the components of $\mathbf{x}$ are nonzero, $\mathbf{y}$ can be taken as $\left(-x_2, x_1, 0, \ldots, 0\right)$. This is, of course, not true when $k=1$, since the product of two nonzero real numbers is nonzero.",EQUALITY
 "Suppose $a, b \in R^k$. Find $c \in R^k$ and $r > 0$ such that $|x-a|=2|x-b|$ if and only if $| x - c | = r$. Prove that $3c = 4b - a$ and $3r = 2 |b - a|$.","\begin{proof}
 
     Since the solution is given to us, all we have to do is verify it, i.e., we need to show that the equation
@@ -152,7 +152,7 @@ if $x \in X$ and $\delta>0$, then $x \in B_{\frac{1}{n}}\left(x_{n j}\right)$ fo
 
     We see that $E \cap W$ is at most countable, being a countable union of at-most-countable sets. It remains to show that $P=W^c$, and that $P$ is perfect.
 
-\end{proof}","We see that $E \cap W$ is at most countable, being a countable union of at-most-countable sets. It remains to show that $P=W^c$, and that $P$ is perfect.",UNKNOWN
+\end{proof}","We see that $E \cap W$ is at most countable, being a countable union of at-most-countable sets. It remains to show that $P=W^c$, and that $P$ is perfect.",EQUALITY
 Prove that every closed set in a separable metric space is the union of a (possibly empty) perfect set and a set which is at most countable.,"\begin{proof}
 
     If $E$ is closed, it contains all its limit points, and hence certainly all its condensation points. Thus $E=P \cup(E \backslash P)$, where $P$ is perfect (the set of all condensation points of $E$ ), and $E \backslash P$ is at most countable.
@@ -166,12 +166,12 @@ Prove that convergence of $\left\{s_{n}\right\}$ implies convergence of $\left\{
 
     Let $\varepsilon>0$. Since the sequence $\left\{s_n\right\}$ is a Cauchy sequence, there exists $N$ such that $\left|s_m-s_n\right|<\varepsilon$ for all $m>N$ and $n>N$. We then have $\left| |s_m| - |s_n| \right| \leq\left|s_m-s_n\right|<\varepsilon$ for all $m>N$ and $n>N$. Hence the sequence $\left\{\left|s_n\right|\right\}$ is also a Cauchy sequence, and therefore must converge.
 
-\end{proof}","Let $\varepsilon>0$. Since the sequence $\left\{s_n\right\}$ is a Cauchy sequence, there exists $N$ such that $\left|s_m-s_n\right|<\varepsilon$ for all $m>N$ and $n>N$. We then have $\left| |s_m| - |s_n| \right| \leq\left|s_m-s_n\right|<\varepsilon$ for all $m>N$ and $n>N$. Hence the sequence $\left\{\left|s_n\right|\right\}$ is also a Cauchy sequence, and therefore must converge.",LET
+\end{proof}","Let $\varepsilon>0$. Since the sequence $\left\{s_n\right\}$ is a Cauchy sequence, there exists $N$ such that $\left|s_m-s_n\right|<\varepsilon$ for all $m>N$ and $n>N$. We then have $\left| |s_m| - |s_n| \right| \leq\left|s_m-s_n\right|<\varepsilon$ for all $m>N$ and $n>N$. Hence the sequence $\left\{\left|s_n\right|\right\}$ is also a Cauchy sequence, and therefore must converge.",EXISTENCE
 "If $s_{1}=\sqrt{2}$, and $s_{n+1}=\sqrt{2+\sqrt{s_{n}}} \quad(n=1,2,3, \ldots),$ prove that $\left\{s_{n}\right\}$ converges, and that $s_{n}<2$ for $n=1,2,3, \ldots$.","\begin{proof}
 
     Since $\sqrt{2}<2$, it is manifest that if $s_n<2$, then $s_{n+1}<\sqrt{2+2}=2$. Hence it follows by induction that $\sqrt{2}<s_n<2$ for all $n$. In view of this fact,it also follows that $\left(s_n-2\right)\left(s_n+1\right)<0$ for all $n>1$, i.e., $s_n>s_n^2-2=s_{n-1}$. Hence the sequence is an increasing sequence that is bounded above (by 2 ) and so converges. Since the limit $s$ satisfies $s^2-s-2=0$, it follows that the limit is 2.
 
-\end{proof}","Since $\sqrt{2}<2$, it is manifest that if $s_n<2$, then $s_{n+1}<\sqrt{2+2}=2$. Hence it follows by induction that $\sqrt{2}<s_n<2$ for all $n$. In view of this fact,it also follows that $\left(s_n-2\right)\left(s_n+1\right)<0$ for all $n>1$, i.e., $s_n>s_n^2-2=s_{n-1}$. Hence the sequence is an increasing sequence that is bounded above (by 2 ) and so converges. Since the limit $s$ satisfies $s^2-s-2=0$, it follows that the limit is 2.",ASSUME
+\end{proof}","Since $\sqrt{2}<2$, it is manifest that if $s_n<2$, then $s_{n+1}<\sqrt{2+2}=2$. Hence it follows by induction that $\sqrt{2}<s_n<2$ for all $n$. In view of this fact,it also follows that $\left(s_n-2\right)\left(s_n+1\right)<0$ for all $n>1$, i.e., $s_n>s_n^2-2=s_{n-1}$. Hence the sequence is an increasing sequence that is bounded above (by 2 ) and so converges. Since the limit $s$ satisfies $s^2-s-2=0$, it follows that the limit is 2.",INDUCTION
 "Prove that $\lim_{n \rightarrow \infty} \sum_{i<n} a_i = \infty$, where $a_i = \sqrt{i + 1} -\sqrt{i}$.","\begin{proof}
 
     (a) Multiplying and dividing $a_n$ by $\sqrt{n+1}+\sqrt{n}$, we find that $a_n=\frac{1}{\sqrt{n+1}+\sqrt{n}}$, which is larger than $\frac{1}{2 \sqrt{n+1}}$. The series $\sum a_n$ therefore diverges by comparison with the $p$ series $\left(p=\frac{1}{2}\right)$.
@@ -213,7 +213,7 @@ $$
 
 from which the desired inequality follows.
 
-\end{proof}","We shall show that the partial sums of this series form a Cauchy sequence, i.e., given $\varepsilon>0$ there exists $N$ such that $\left|\sum_{k=m+1}^n a_k b_k\right|\langle\varepsilon$ if $n\rangle$ $m \geq N$. To do this, let $S_n=\sum_{k=1}^n a_k\left(S_0=0\right)$, so that $a_k=S_k-S_{k-1}$ for $k=1,2, \ldots$ Let $M$ be an uppper bound for both $\left|b_n\right|$ and $\left|S_n\right|$, and let $S=\sum a_n$ and $b=\lim b_n$. Choose $N$ so large that the following three inequalities hold for all $m>N$ and $n>N$ :",UNKNOWN
+\end{proof}","We shall show that the partial sums of this series form a Cauchy sequence, i.e., given $\varepsilon>0$ there exists $N$ such that $\left|\sum_{k=m+1}^n a_k b_k\right|\langle\varepsilon$ if $n\rangle$ $m \geq N$. To do this, let $S_n=\sum_{k=1}^n a_k\left(S_0=0\right)$, so that $a_k=S_k-S_{k-1}$ for $k=1,2, \ldots$ Let $M$ be an uppper bound for both $\left|b_n\right|$ and $\left|S_n\right|$, and let $S=\sum a_n$ and $b=\lim b_n$. Choose $N$ so large that the following three inequalities hold for all $m>N$ and $n>N$ :",EXISTENCE
 "Suppose $\left\{p_{n}\right\}$ is a Cauchy sequence in a metric space $X$, and some sequence $\left\{p_{n l}\right\}$ converges to a point $p \in X$. Prove that the full sequence $\left\{p_{n}\right\}$ converges to $p$.","\begin{proof}
 
     Let $\varepsilon>0$. Choose $N_1$ so large that $d\left(p_m, p_n\right)<\frac{\varepsilon}{2}$ if $m>N_1$ and $n>N_1$. Then choose $N \geq N_1$ so large that $d\left(p_{n_k}, p\right)<\frac{\varepsilon}{2}$ if $k>N$. Then if $n>N$, we have
@@ -236,7 +236,7 @@ For the first term on the right is less than $\frac{\varepsilon}{2}$ since $n>N_
 
     Let $x \in \bar{E}$. We need to show that $f(x) \in \overline{f(E)}$. To this end, let $O$ be any neighborhood of $f(x)$. Since $f$ is continuous, $f^{-1}(O)$ contains (is) a neighborhood of $x$. Since $x \in \bar{E}$, there is a point $u$ of $E$ in $f^{-1}(O)$. Hence $\frac{f(u)}{f(E)} \in O \cap f(E)$. Since $O$ was any neighborhood of $f(x)$, it follows that $f(x) \in \overline{f(E)}$
 
-\end{proof}","Let $x \in \bar{E}$. We need to show that $f(x) \in \overline{f(E)}$. To this end, let $O$ be any neighborhood of $f(x)$. Since $f$ is continuous, $f^{-1}(O)$ contains (is) a neighborhood of $x$. Since $x \in \bar{E}$, there is a point $u$ of $E$ in $f^{-1}(O)$. Hence $\frac{f(u)}{f(E)} \in O \cap f(E)$. Since $O$ was any neighborhood of $f(x)$, it follows that $f(x) \in \overline{f(E)}$",LET
+\end{proof}","Let $x \in \bar{E}$. We need to show that $f(x) \in \overline{f(E)}$. To this end, let $O$ be any neighborhood of $f(x)$. Since $f$ is continuous, $f^{-1}(O)$ contains (is) a neighborhood of $x$. Since $x \in \bar{E}$, there is a point $u$ of $E$ in $f^{-1}(O)$. Hence $\frac{f(u)}{f(E)} \in O \cap f(E)$. Since $O$ was any neighborhood of $f(x)$, it follows that $f(x) \in \overline{f(E)}$",CONCLUDE
 "Let $f$ and $g$ be continuous mappings of a metric space $X$ into a metric space $Y$, and let $E$ be a dense subset of $X$. Prove that $f(E)$ is dense in $f(X)$.","\begin{proof}
 
     To prove that $f(E)$ is dense in $f(X)$, simply use that $f(X)=f(\bar{E}) \subseteq \overline{f(E)}$.
@@ -402,7 +402,7 @@ $$
 
 if $0<|h|<\eta$. Since $h=g(y+k)-g(y)$, there exists $\delta>0$ such that $0<|h|<\eta$ if $0<|k|<\delta$. The proof is now complete. 
 
-\end{proof}","For any $c, d$ with $a<c<d<b$ there exists a point $p \in(c, d)$ such that $f(d)-f(c)=f^{\prime}(p)(d-c)>0$. Hence $f(c)<f(d)$",UNKNOWN
+\end{proof}","For any $c, d$ with $a<c<d<b$ there exists a point $p \in(c, d)$ such that $f(d)-f(c)=f^{\prime}(p)(d-c)>0$. Hence $f(c)<f(d)$",EXISTENCE
 "If $C_{0}+\frac{C_{1}}{2}+\cdots+\frac{C_{n-1}}{n}+\frac{C_{n}}{n+1}=0,$ where $C_{0}, \ldots, C_{n}$ are real constants, prove that the equation $C_{0}+C_{1} x+\cdots+C_{n-1} x^{n-1}+C_{n} x^{n}=0$ has at least one real root between 0 and 1.","\begin{proof}
 
     Consider the polynomial
@@ -423,7 +423,7 @@ $$
 
 It is obvious that $p(0)=0$, and the hypothesis of the problem is that $p(1)=0$. Hence Rolle's theorem implies that $p^{\prime}(x)=0$ for some $x$ between 0 and 1 .
 
-\end{proof}",Consider the polynomial,UNKNOWN
+\end{proof}",Consider the polynomial,LET
 "Suppose (a) $f$ is continuous for $x \geq 0$, (b) $f^{\prime}(x)$ exists for $x>0$, (c) $f(0)=0$, (d) $f^{\prime}$ is monotonically increasing. Put $g(x)=\frac{f(x)}{x} \quad(x>0)$ and prove that $g$ is monotonically increasing.","\begin{proof}
 
     Put
@@ -497,7 +497,7 @@ Equality can hold on any $R^n$, as we see by taking $\mathbf{f}(x)=(f(x), 0, \ld
 
 
 
-\end{proof}","The inequality is obvious if $M_0=+\infty$ or $M_2=+\infty$, so we shall assume that $M_0$ and $M_2$ are both finite. We need to show that",UNKNOWN
+\end{proof}","The inequality is obvious if $M_0=+\infty$ or $M_2=+\infty$, so we shall assume that $M_0$ and $M_2$ are both finite. We need to show that",ASSUME
 Let $X$ be a topological space; let $A$ be a subset of $X$. Suppose that for each $x \in A$ there is an open set $U$ containing $x$ such that $U \subset A$. Show that $A$ is open in $X$.,"\begin{proof}
 
     Since, from the given hypothesis given any $x \in A$ there exists an open set containing $x$ say, $U_x$ such that $U_x \subset A$. Thus, we claim that
@@ -510,17 +510,17 @@ $$
 
 Observe that if we prove the above claim, then $A$ will be open, being a union of arbitrary open sets. Since, for each $x \in A, U_x \subset A \Longrightarrow \cup U_x \subset A$. For the converse, observe that given any $x \in A, x \in U_x$ and hence in the union. Thus we proved our claim, and hence $A$ is an open set.
 
-\end{proof}","Since, from the given hypothesis given any $x \in A$ there exists an open set containing $x$ say, $U_x$ such that $U_x \subset A$. Thus, we claim that",CONCLUDE
+\end{proof}","Since, from the given hypothesis given any $x \in A$ there exists an open set containing $x$ say, $U_x$ such that $U_x \subset A$. Thus, we claim that",EXISTENCE
 "If $\mathcal{T}_\alpha$ is a family of topologies on $X$, show that $\bigcap \mathcal{T}_\alpha$ is a topology on $X$.","\begin{proof}
 
     Since $\emptyset$ and $X$ belong to $\mathcal{T}_\alpha$ for each $\alpha$, they belong to $\bigcap_\alpha \mathcal{T}_\alpha$. Let $\left\{V_\beta\right\}_\beta$ be a collection of open sets in $\bigcap_\alpha \mathcal{T}_\alpha$. For any fixed $\alpha$ we have $\cup_\beta V_\beta \in \mathcal{T}_\alpha$ since $\mathcal{T}_\alpha$ is a topology on $X$, so $\bigcup_\beta V_\beta \in \bigcap_\alpha \mathcal{T}_\alpha$. Similarly, if $U_1, \ldots, U_n$ are elements of $\bigcap_\alpha \mathcal{T}_\alpha$, then for each $\alpha$ we have $\bigcup_{i=1}^n U_i \in \mathcal{T}_\alpha$ and therefore $\bigcup_{i=1}^n U_i \in \bigcap_\alpha \mathcal{T}_\alpha$. It follows that $\bigcap_\alpha \mathcal{T}_\alpha$ is a topology on $X$.
 
-\end{proof}","Since $\emptyset$ and $X$ belong to $\mathcal{T}_\alpha$ for each $\alpha$, they belong to $\bigcap_\alpha \mathcal{T}_\alpha$. Let $\left\{V_\beta\right\}_\beta$ be a collection of open sets in $\bigcap_\alpha \mathcal{T}_\alpha$. For any fixed $\alpha$ we have $\cup_\beta V_\beta \in \mathcal{T}_\alpha$ since $\mathcal{T}_\alpha$ is a topology on $X$, so $\bigcup_\beta V_\beta \in \bigcap_\alpha \mathcal{T}_\alpha$. Similarly, if $U_1, \ldots, U_n$ are elements of $\bigcap_\alpha \mathcal{T}_\alpha$, then for each $\alpha$ we have $\bigcup_{i=1}^n U_i \in \mathcal{T}_\alpha$ and therefore $\bigcup_{i=1}^n U_i \in \bigcap_\alpha \mathcal{T}_\alpha$. It follows that $\bigcap_\alpha \mathcal{T}_\alpha$ is a topology on $X$.",ASSUME
+\end{proof}","Since $\emptyset$ and $X$ belong to $\mathcal{T}_\alpha$ for each $\alpha$, they belong to $\bigcap_\alpha \mathcal{T}_\alpha$. Let $\left\{V_\beta\right\}_\beta$ be a collection of open sets in $\bigcap_\alpha \mathcal{T}_\alpha$. For any fixed $\alpha$ we have $\cup_\beta V_\beta \in \mathcal{T}_\alpha$ since $\mathcal{T}_\alpha$ is a topology on $X$, so $\bigcup_\beta V_\beta \in \bigcap_\alpha \mathcal{T}_\alpha$. Similarly, if $U_1, \ldots, U_n$ are elements of $\bigcap_\alpha \mathcal{T}_\alpha$, then for each $\alpha$ we have $\bigcup_{i=1}^n U_i \in \mathcal{T}_\alpha$ and therefore $\bigcup_{i=1}^n U_i \in \bigcap_\alpha \mathcal{T}_\alpha$. It follows that $\bigcap_\alpha \mathcal{T}_\alpha$ is a topology on $X$.",CONCLUDE
 Let $\mathcal{T}_\alpha$ be a family of topologies on $X$. Show that there is a unique smallest topology on $X$ containing all the collections $\mathcal{T}_\alpha$.,"\begin{proof}
 
     (b) First we prove that there is a unique smallest topology on $X$ containing all the collections $\mathcal{T}_\alpha$. Uniqueness of such topology is clear. For each $\alpha$ let $\mathcal{B}_\alpha$ be a basis for $\mathcal{T}_\alpha$. Let $\mathcal{T}$ be the topology generated by the subbasis $\mathcal{S}=\bigcup_\alpha \mathcal{B}_\alpha$. Then the collection $\mathcal{B}$ of all finite intersections of elements of $\mathcal{S}$ is a basis for $\mathcal{T}$. Clearly $\mathcal{T}_\alpha \subset \mathcal{T}$ for all $\alpha$. We now prove that if $\mathcal{O}$ is a topology on $X$ such that $\mathcal{T}_\alpha \subset \mathcal{O}$ for all $\alpha$, then $\mathcal{T} \subset \mathcal{O}$. Given such $\mathcal{O}$, we have $\mathcal{B}_\alpha \subset \mathcal{O}$ for all $\alpha$, so $\mathcal{S} \subset \mathcal{O}$. Since $\mathcal{O}$ is a topology, it must contain all finite intersections of elements of $\mathcal{S}$, so $\mathcal{B} \subset \mathcal{O}$ and hence $\mathcal{T} \subset \mathcal{O}$. We conclude that the topology $\mathcal{T}$ generated by the subbasis $\mathcal{S}=\cup_\alpha \mathcal{B}_\alpha$ is the unique smallest topology on $X$ containing all the collections $\mathcal{T}_\alpha$.
 
-\end{proof}","(b) First we prove that there is a unique smallest topology on $X$ containing all the collections $\mathcal{T}_\alpha$. Uniqueness of such topology is clear. For each $\alpha$ let $\mathcal{B}_\alpha$ be a basis for $\mathcal{T}_\alpha$. Let $\mathcal{T}$ be the topology generated by the subbasis $\mathcal{S}=\bigcup_\alpha \mathcal{B}_\alpha$. Then the collection $\mathcal{B}$ of all finite intersections of elements of $\mathcal{S}$ is a basis for $\mathcal{T}$. Clearly $\mathcal{T}_\alpha \subset \mathcal{T}$ for all $\alpha$. We now prove that if $\mathcal{O}$ is a topology on $X$ such that $\mathcal{T}_\alpha \subset \mathcal{O}$ for all $\alpha$, then $\mathcal{T} \subset \mathcal{O}$. Given such $\mathcal{O}$, we have $\mathcal{B}_\alpha \subset \mathcal{O}$ for all $\alpha$, so $\mathcal{S} \subset \mathcal{O}$. Since $\mathcal{O}$ is a topology, it must contain all finite intersections of elements of $\mathcal{S}$, so $\mathcal{B} \subset \mathcal{O}$ and hence $\mathcal{T} \subset \mathcal{O}$. We conclude that the topology $\mathcal{T}$ generated by the subbasis $\mathcal{S}=\cup_\alpha \mathcal{B}_\alpha$ is the unique smallest topology on $X$ containing all the collections $\mathcal{T}_\alpha$.",ASSUME
+\end{proof}","(b) First we prove that there is a unique smallest topology on $X$ containing all the collections $\mathcal{T}_\alpha$. Uniqueness of such topology is clear. For each $\alpha$ let $\mathcal{B}_\alpha$ be a basis for $\mathcal{T}_\alpha$. Let $\mathcal{T}$ be the topology generated by the subbasis $\mathcal{S}=\bigcup_\alpha \mathcal{B}_\alpha$. Then the collection $\mathcal{B}$ of all finite intersections of elements of $\mathcal{S}$ is a basis for $\mathcal{T}$. Clearly $\mathcal{T}_\alpha \subset \mathcal{T}$ for all $\alpha$. We now prove that if $\mathcal{O}$ is a topology on $X$ such that $\mathcal{T}_\alpha \subset \mathcal{O}$ for all $\alpha$, then $\mathcal{T} \subset \mathcal{O}$. Given such $\mathcal{O}$, we have $\mathcal{B}_\alpha \subset \mathcal{O}$ for all $\alpha$, so $\mathcal{S} \subset \mathcal{O}$. Since $\mathcal{O}$ is a topology, it must contain all finite intersections of elements of $\mathcal{S}$, so $\mathcal{B} \subset \mathcal{O}$ and hence $\mathcal{T} \subset \mathcal{O}$. We conclude that the topology $\mathcal{T}$ generated by the subbasis $\mathcal{S}=\cup_\alpha \mathcal{B}_\alpha$ is the unique smallest topology on $X$ containing all the collections $\mathcal{T}_\alpha$.",CONCLUDE
 "Show that if $\mathcal{A}$ is a basis for a topology on $X$, then the topology generated by $\mathcal{A}$ equals the intersection of all topologies on $X$ that contain $\mathcal{A}$.","\begin{proof}
 
     Let $\mathcal{T}$ be the topology generated by $\mathcal{A}$ and let $\mathcal{O}$ be the intersection of all topologies on $X$ that contains $\mathcal{A}$. Clearly $\mathcal{O} \subset \mathcal{T}$ since $\mathcal{T}$ is a topology on $X$ that contain $\mathcal{A}$. Conversely, let $U \in \mathcal{T}$, so that $U$ is a union of elements of $\mathcal{A}$. Since each of this elements is also an element of $\mathcal{O}$, their union $U$ belongs to $\mathcal{O}$. Thus $\mathcal{T} \subset \mathcal{O}$ and the equality holds.
@@ -540,7 +540,7 @@ Show that the lower limit topology $\mathbb{R}_l$ and $K$-topology $\mathbb{R}_K
 
     Exercise 16.4. Let $U \times V$ be a (standard) basis element for $X \times Y$, so that $U$ is open in $X$ and $V$ is open in $Y$. Then $\pi_1(U \times V)=U$ is open in $X$ and $\pi_2(U \times V)=V$ is open in $Y$. Since arbitrary maps and unions satisfy $f\left(\bigcup_\alpha W_\alpha\right)=\bigcup_\alpha f\left(W_\alpha\right)$, it follows that $\pi_1$ and $\pi_2$ are open maps.
 
-\end{proof}","Exercise 16.4. Let $U \times V$ be a (standard) basis element for $X \times Y$, so that $U$ is open in $X$ and $V$ is open in $Y$. Then $\pi_1(U \times V)=U$ is open in $X$ and $\pi_2(U \times V)=V$ is open in $Y$. Since arbitrary maps and unions satisfy $f\left(\bigcup_\alpha W_\alpha\right)=\bigcup_\alpha f\left(W_\alpha\right)$, it follows that $\pi_1$ and $\pi_2$ are open maps.",UNKNOWN
+\end{proof}","Exercise 16.4. Let $U \times V$ be a (standard) basis element for $X \times Y$, so that $U$ is open in $X$ and $V$ is open in $Y$. Then $\pi_1(U \times V)=U$ is open in $X$ and $\pi_2(U \times V)=V$ is open in $Y$. Since arbitrary maps and unions satisfy $f\left(\bigcup_\alpha W_\alpha\right)=\bigcup_\alpha f\left(W_\alpha\right)$, it follows that $\pi_1$ and $\pi_2$ are open maps.",LET
 "Show that if $U$ is open in $X$ and $A$ is closed in $X$, then $U-A$ is open in $X$, and $A-U$ is closed in $X$.","\begin{proof}
 
 Since
@@ -591,12 +591,12 @@ $$
 
 for all $n \geq N$, so $f_n\left(x_n\right) \in V$ for all $n \geq N$. It follows that $\left(f_n\left(x_n\right)\right)_n$ converges to $f(x)$.
 
-\end{proof}","Let $d$ be the metric on $Y$. Let $V$ be a neighbourhood of $f(x)$, and let $\varepsilon>0$ be such that $f(x) \in B_d(f(x), \varepsilon) \subset V$. Since $\left(f_n\right)_n$ converges uniformly to $f$, there exists $N_1 \in \mathbb{Z}_{+}$such that $d\left(f_n(x), f(x)\right)<\varepsilon / 2$ for all $x \in X$ and all $n \geq N_1$, so that $d\left(f_n\left(x_n\right), f\left(x_n\right)\right)<\varepsilon / 2$ for all $n \geq N_1$. Moreover, $f$ is continuous, so there exists $N_2 \in \mathbb{Z}_{+}$such that $d\left(f\left(x_n\right), f(x)\right)<\varepsilon / 2$ for all $n \geq N_2$. Thus, if $N>\max \left\{N_1, N_2\right\}$, then",ASSUME
+\end{proof}","Let $d$ be the metric on $Y$. Let $V$ be a neighbourhood of $f(x)$, and let $\varepsilon>0$ be such that $f(x) \in B_d(f(x), \varepsilon) \subset V$. Since $\left(f_n\right)_n$ converges uniformly to $f$, there exists $N_1 \in \mathbb{Z}_{+}$such that $d\left(f_n(x), f(x)\right)<\varepsilon / 2$ for all $x \in X$ and all $n \geq N_1$, so that $d\left(f_n\left(x_n\right), f\left(x_n\right)\right)<\varepsilon / 2$ for all $n \geq N_1$. Moreover, $f$ is continuous, so there exists $N_2 \in \mathbb{Z}_{+}$such that $d\left(f\left(x_n\right), f(x)\right)<\varepsilon / 2$ for all $n \geq N_2$. Thus, if $N>\max \left\{N_1, N_2\right\}$, then",EXISTENCE
 "If $A \subset X$, a retraction of $X$ onto $A$ is a continuous map $r: X \rightarrow A$ such that $r(a)=a$ for each $a \in A$. Show that a retraction is a quotient map.","\begin{proof}
 
 The inclusion map $i: A \rightarrow X$ is continuous and $r \circ i=1_A$ is the identity. Thus $r$ is a quotient map by (a).
 
-\end{proof}",The inclusion map $i: A \rightarrow X$ is continuous and $r \circ i=1_A$ is the identity. Thus $r$ is a quotient map by (a).,CONCLUDE
+\end{proof}",The inclusion map $i: A \rightarrow X$ is continuous and $r \circ i=1_A$ is the identity. Thus $r$ is a quotient map by (a).,EQUALITY
 "Let $\left\{A_{n}\right\}$ be a sequence of connected subspaces of $X$, such that $A_{n} \cap A_{n+1} \neq \varnothing$ for all $n$. Show that $\bigcup A_{n}$ is connected.","\begin{proof}
 
     Suppose that $\bigcup_n A_n=B \cup C$, where $B$ and $C$ are disjoint open subsets of $\bigcup_n A_n$. Since $A_1$ is connected and a subset of $B \cup C$, by Lemma $23.2$ it lies entirely within either $B$ or $C$. Without any loss of generality, we may assume $A_1 \subset B$. Note that given $n$, if $A_n \subset B$ then $A_{n+1} \subset B$, for if $A_{n+1} \subset C$ then $A_n \cap A_{n+1} \subset B \cap C=\emptyset$, in contradiction with the assumption. By induction, $A_n \subset B$ for all $n \in \mathbb{Z}_{+}$, so that $\bigcup_n A_n \subset B$. It follows that $\bigcup_n A_n$ is connected.
@@ -627,7 +627,7 @@ $$
 
 is connected, so $V=\bigcup_{y \in Y \backslash B} V_y$ is connected. Thus $(X \times Y) \backslash(A \times B)=U \cup V$ is connected since $c \times d$ is a common point of $U$ and $V$.
 
-\end{proof}","This is similar to the proof of Theorem 23.6. Take $c \times d \in(X \backslash A) \times(Y \backslash B)$. For each $x \in X \backslash A$, the set",UNKNOWN
+\end{proof}","This is similar to the proof of Theorem 23.6. Take $c \times d \in(X \backslash A) \times(Y \backslash B)$. For each $x \in X \backslash A$, the set",LET
 Let $f: S^{1} \rightarrow \mathbb{R}$ be a continuous map. Show there exists a point $x$ of $S^{1}$ such that $f(x)=f(-x)$.,"\begin{proof}
 
     Let $f: S^1 \rightarrow \mathbb{R}$ be continuous. Let $x \in S^1$. If $f(x)=f(-x)$ we are done, so assume $f(x) \neq f(-x)$. Define $g: S^1 \rightarrow \mathbb{R}$ by setting $g(x)=f(x)-f(-x)$. Then $g$ is continuous. Suppose $f(x)>f(-x)$, so that $g(x)>0$. Then $-x \in S^1$ and $g(-x)<0$. By the intermediate value theorem, since $S^1$ is connected and $g(-x)<0<g(x)$, there exists $y \in S^1$ such that $g(y)=0$. i.e, $f(y)=f(-y)$. Similarly, if $f(x)<f(-x)$, then $g(x)<0<g(-x)$ and again the intermediate value theorem gives the result.
@@ -637,7 +637,7 @@ Let $X$ be locally path connected. Show that every connected open set in $X$ is 
 
     Let $U$ be a open connected set in $X$. By Theorem 25.4, each path component of $U$ is open in $X$, hence open in $U$. Thus, each path component in $U$ is both open and closed in $U$, so must be empty or all of $U$. It follows that $U$ is path-connected.
 
-\end{proof}","Let $U$ be a open connected set in $X$. By Theorem 25.4, each path component of $U$ is open in $X$, hence open in $U$. Thus, each path component in $U$ is both open and closed in $U$, so must be empty or all of $U$. It follows that $U$ is path-connected.",LET
+\end{proof}","Let $U$ be a open connected set in $X$. By Theorem 25.4, each path component of $U$ is open in $X$, hence open in $U$. Thus, each path component in $U$ is both open and closed in $U$, so must be empty or all of $U$. It follows that $U$ is path-connected.",CONCLUDE
 Let $X$ be a compact Hausdorff space. Let $\mathcal{A}$ be a collection of closed connected subsets of $X$ that is simply ordered by proper inclusion. Then $Y=\bigcap_{A \in \mathcal{A}} A$ is connected.,"\begin{proof}
 
  Since each $A \in \mathcal{A}$ is closed, $Y$ is closed. Suppose that $C$ and $D$ form a separation of $Y$. Then $C$ and $D$ are closed in $Y$, hence closed in $X$. Since $X$ is compact, $C$ and $D$ are compact by Theorem 26.2. Since $X$ is Hausdorff, by Exercise 26.5, there exist $U$ and $V$ open in $X$ and disjoint containing $C$ and $D$, respectively. We show that
@@ -671,7 +671,7 @@ Show that a connected metric space having more than one point is uncountable.,"\
 
     The distance function $d: X \times X \rightarrow \mathbb{R}$ is continuous by Exercise 20.3(a), so given $x \in X$, the function $d_x: X \rightarrow \mathbb{R}$ given by $d_x(y)=d(x, y)$ is continuous by Exercise 19.11. Since $X$ is connected, the image $d_x(X)$ is a connected subspace of $\mathbb{R}$, and contains 0 since $d_x(x)=0$. Thus, if $y \in X$ and $y \neq x$, then $d_x(X)$ contains the set $[0, \delta]$, where $\delta=d_x(y)>0$. Therefore $X$ must be uncountable.
 
-\end{proof}","The distance function $d: X \times X \rightarrow \mathbb{R}$ is continuous by Exercise 20.3(a), so given $x \in X$, the function $d_x: X \rightarrow \mathbb{R}$ given by $d_x(y)=d(x, y)$ is continuous by Exercise 19.11. Since $X$ is connected, the image $d_x(X)$ is a connected subspace of $\mathbb{R}$, and contains 0 since $d_x(x)=0$. Thus, if $y \in X$ and $y \neq x$, then $d_x(X)$ contains the set $[0, \delta]$, where $\delta=d_x(y)>0$. Therefore $X$ must be uncountable.",ASSUME
+\end{proof}","The distance function $d: X \times X \rightarrow \mathbb{R}$ is continuous by Exercise 20.3(a), so given $x \in X$, the function $d_x: X \rightarrow \mathbb{R}$ given by $d_x(y)=d(x, y)$ is continuous by Exercise 19.11. Since $X$ is connected, the image $d_x(X)$ is a connected subspace of $\mathbb{R}$, and contains 0 since $d_x(x)=0$. Thus, if $y \in X$ and $y \neq x$, then $d_x(X)$ contains the set $[0, \delta]$, where $\delta=d_x(y)>0$. Therefore $X$ must be uncountable.",CONCLUDE
 Show that X is countably compact if and only if every nested sequence $C_1 \supset C_2 \supset \cdots$ of closed nonempty sets of X has a nonempty intersection.,"\begin{proof}
 
 We could imitate the proof of Theorem 26.9, but we prove directly each direction. First let $X$ be countable compact and let $C_1 \supset C_2 \supset \cdots$ be a nested sequence of closed nonempty sets of $X$. For each $n \in \mathbb{Z}_{+}, U_n=X \backslash C_n$ is open in $X$. Then $\left\{U_n\right\}_{n \in \mathbb{Z}_{+}}$is a countable collection of open sets with no finite subcollection covering $X$, for if $U_{i_1} \cup \cdots \cup U_{1_n}$ covers $X$, then $C_{i_1} \cap \cdots \cap C_{i_n}$ is empty, contrary to the assumption. Hence $\left\{U_n\right\}_{n \in \mathbb{Z}_{+}}$does not cover $X$, so there exist $x \in X \backslash \bigcup_{n \in \mathbb{Z}_{+}} U_n=\bigcap_{n \in Z_{+}}\left(X \backslash U_n\right)=\bigcap_{n \in Z_{+}} C_n$.
@@ -690,7 +690,7 @@ Show that the rationals $\mathbb{Q}$ are not locally compact.,"\begin{proof}
 
     Let $U$ be a neighbourhood of $x$. Since $X$ is locally compact at $x$, there exists a compact subspace $C$ of $X$ containing a neighbourhood $W$ of $x$. Then $U \cap W$ is open in $X$, hence in $C$. Thus, $C \backslash(U \cap W)$ is closed in $C$, hence compact. Since $X$ is Hausdorff, there exist disjoint open sets $V_1$ and $V_2$ of $X$ containing $x$ and $C \backslash(U \cap W)$ respectively. Let $V=V_1 \cap U \cap W$. Since $\bar{V}$ is closed in $C$, it is compact. Furthermore, $\bar{V}$ is disjoint from $C \backslash(U \cap W) \supset C \backslash U$, so $\bar{V} \subset U$.
 
-\end{proof}","Let $U$ be a neighbourhood of $x$. Since $X$ is locally compact at $x$, there exists a compact subspace $C$ of $X$ containing a neighbourhood $W$ of $x$. Then $U \cap W$ is open in $X$, hence in $C$. Thus, $C \backslash(U \cap W)$ is closed in $C$, hence compact. Since $X$ is Hausdorff, there exist disjoint open sets $V_1$ and $V_2$ of $X$ containing $x$ and $C \backslash(U \cap W)$ respectively. Let $V=V_1 \cap U \cap W$. Since $\bar{V}$ is closed in $C$, it is compact. Furthermore, $\bar{V}$ is disjoint from $C \backslash(U \cap W) \supset C \backslash U$, so $\bar{V} \subset U$.",LET
+\end{proof}","Let $U$ be a neighbourhood of $x$. Since $X$ is locally compact at $x$, there exists a compact subspace $C$ of $X$ containing a neighbourhood $W$ of $x$. Then $U \cap W$ is open in $X$, hence in $C$. Thus, $C \backslash(U \cap W)$ is closed in $C$, hence compact. Since $X$ is Hausdorff, there exist disjoint open sets $V_1$ and $V_2$ of $X$ containing $x$ and $C \backslash(U \cap W)$ respectively. Let $V=V_1 \cap U \cap W$. Since $\bar{V}$ is closed in $C$, it is compact. Furthermore, $\bar{V}$ is disjoint from $C \backslash(U \cap W) \supset C \backslash U$, so $\bar{V} \subset U$.",CONCLUDE
 "Show that if $X$ has a countable dense subset, every collection of disjoint open sets in $X$ is countable.","\begin{proof}
 
     Let $\mathcal{U}$ be a collection of disjoint open sets in $X$ and let $A$ be a countable dense subset of $X$.
@@ -815,7 +815,7 @@ $$
 
 By the fact that $\{0,1\}$ is compact and Hausdorff we can extend $f$ to a surjective map $\bar{f}: \beta(X) \rightarrow\{0,1\}$ such that $\bar{f}^{-1}(\{0\})$ and $\bar{f}^{-1}(\{1\})$ are disjoint open sets that cover $\beta(X)$, which makes this space not-connected.
 
-\end{proof}","The closure of a connected set is connected, so if $X$ is connected so is $\beta(X)$",UNKNOWN
+\end{proof}","The closure of a connected set is connected, so if $X$ is connected so is $\beta(X)$",LET
 Prove that $-(-v) = v$ for every $v \in V$.,"\begin{proof}
 
     By definition, we have
@@ -828,7 +828,7 @@ $$
 
 This implies both $v$ and $-(-v)$ are additive inverses of $-v$, by the uniqueness of additive inverse, it follows that $-(-v)=v$.
 
-\end{proof}","By definition, we have",UNKNOWN
+\end{proof}","By definition, we have",DEFINITION
 "Give an example of a nonempty subset $U$ of $\mathbf{R}^2$ such that $U$ is closed under addition and under taking additive inverses (meaning $-u \in U$ whenever $u \in U$), but $U$ is not a subspace of $\mathbf{R}^2$.","\begin{proof}
 
     \[U=\mathbb{Z}^2=\left\{(x, y) \in \mathbf{R}^2: x, y \text { are integers }\right\}\]
@@ -912,7 +912,7 @@ Now, for some root of $\lambda$ of $p$, we can write $p$ is in the form of $\lef
 
 Therefore, $p^{\prime}(\lambda)=0$, which would make $\lambda$ is a common root of both $p$ and $p^{\prime}$.
 
-\end{proof}","First, let $p$ have $m$ distinct roots. Since $p$ has the degree of $m$, then this could imply that $p$ can be actually written in the form of $p(z)=c\left(z-\lambda_1\right) \ldots\left(z-\lambda_m\right)$, which you have $\lambda_1, \ldots, \lambda_m$ being distinct.",UNKNOWN
+\end{proof}","First, let $p$ have $m$ distinct roots. Since $p$ has the degree of $m$, then this could imply that $p$ can be actually written in the form of $p(z)=c\left(z-\lambda_1\right) \ldots\left(z-\lambda_m\right)$, which you have $\lambda_1, \ldots, \lambda_m$ being distinct.",LET
 "Suppose that $S, T \in \mathcal{L}(V)$ are such that $S T=T S$. Prove that $\operatorname{null} (T-\lambda I)$ is invariant under $S$ for every $\lambda \in \mathbf{F}$.","\begin{proof}
 
     First off, fix $\lambda \in F$. Secondly, let $v \in \operatorname{null}(T-\lambda I)$. If so, then $(T-\lambda I)(S v)=T S v-\lambda S v=$ $S T v-\lambda S v=S(T v-\lambda v)=0$. Therefore, $S v \in \operatorname{null}(T-\lambda I)$ since $n u l l(T-\lambda I)$ is actually invariant under $S$.
@@ -936,7 +936,7 @@ Finally, make the consideration to make $(v, w)$ be linearly independent. Now, w
 
 That previous equation implies the following: $\left.\left.\left(a_{(} v+w\right)-a_v\right) v+\left(a_{(} v+w\right)-a_w\right) w=0$. Since $(v, w)$ is linearly independent, this would imply that both $\left.a_{(} v+w\right)=a_v$ and $\left.a_{(} v+w\right)=a_w$. Therefore, $a_v=a_w$.
 
-\end{proof}","For every single $v \in V$, there does exist $a_v \in F$ such that $T v=a_v v$. Since $T 0=0$, then we have to make $a_0$ be the any number in F. However, for every single $v \in V\{0\}$, then the value of $a_V$ is uniquely determined by the previous equation of $T v=a_v v$.",UNKNOWN
+\end{proof}","For every single $v \in V$, there does exist $a_v \in F$ such that $T v=a_v v$. Since $T 0=0$, then we have to make $a_0$ be the any number in F. However, for every single $v \in V\{0\}$, then the value of $a_V$ is uniquely determined by the previous equation of $T v=a_v v$.",EQUALITY
 Suppose that $T \in \mathcal{L}(V)$ has $\operatorname{dim} V$ distinct eigenvalues and that $S \in \mathcal{L}(V)$ has the same eigenvectors as $T$ (not necessarily with the same eigenvalues). Prove that $S T=T S$.,"\begin{proof}
 
     First off, let $n=\operatorname{dim} V$. so, there is a basis of $\left(v_1, \ldots, v_j\right)$ of $V$ that consist of eigenvectors of $T$. Now, let $\lambda_1, \ldots, \lambda_n$ be the corresponding eigenvalues, then we would have $T v_j=\lambda_1 v_j$ for every single $j$.
@@ -945,7 +945,7 @@ Suppose that $T \in \mathcal{L}(V)$ has $\operatorname{dim} V$ distinct eigenval
 
 Now, for every $v_j$ is also an eigenvector of S, so $S v_j=a_j v_j$ for some $a_j \in F$. For each $j$, we would then have $(S T) v_j=S\left(T v_j\right)=\lambda_j S v_j=a_j \lambda_j v_j$ and $(T S) v_j=T\left(S v_j\right)=a_j T v_j=a_j \lambda_j v_j$. Since both operators, which are $S T$ and $T S$, agree on a basis, then both are equal.
 
-\end{proof}","First off, let $n=\operatorname{dim} V$. so, there is a basis of $\left(v_1, \ldots, v_j\right)$ of $V$ that consist of eigenvectors of $T$. Now, let $\lambda_1, \ldots, \lambda_n$ be the corresponding eigenvalues, then we would have $T v_j=\lambda_1 v_j$ for every single $j$.",UNKNOWN
+\end{proof}","First off, let $n=\operatorname{dim} V$. so, there is a basis of $\left(v_1, \ldots, v_j\right)$ of $V$ that consist of eigenvectors of $T$. Now, let $\lambda_1, \ldots, \lambda_n$ be the corresponding eigenvalues, then we would have $T v_j=\lambda_1 v_j$ for every single $j$.",LET
 "Suppose $u, v \in V$. Prove that $\langle u, v\rangle=0$ if and only if $\|u\| \leq\|u+a v\|$ for all $a \in \mathbf{F}$.","\begin{proof}
 
     First off, let us suppose that $(u, v)=0$.
@@ -1066,7 +1066,7 @@ Suppose $U$ is a subspace of $V$. Prove that $U^{\perp}=\{0\}$ if and only if $U
 
     $V=U \bigoplus U^{\perp}$, therefore $U^\perp = \{0\}$ iff $U=V$. 
 
-\end{proof}","$V=U \bigoplus U^{\perp}$, therefore $U^\perp = \{0\}$ iff $U=V$.",CONCLUDE
+\end{proof}","$V=U \bigoplus U^{\perp}$, therefore $U^\perp = \{0\}$ iff $U=V$.",EQUALITY
 "Prove that if $T \in \mathcal{L}(V)$ is normal, then $\operatorname{range} T=\operatorname{range} T^{*}.$","\begin{proof}
 
     Let $T \in \mathcal{L}(V)$ to be a normal operator.
@@ -1148,7 +1148,7 @@ $$
 
 which is where the second equality holds because $\lambda_j$ equals 0 or 1 . Because $T^2$ and $T$ agree on a basis, they must be equal.
 
-\end{proof}","Based on the complex spectral theorem, there is an orthonormal basis of $\left(e_1, \ldots, e_n\right)$ of $V$ consisting of eigenvectors of $T$. Now, let $\lambda_1, \ldots, \lambda_n$ be the corresponding eigenvalues. Therefore,",CONCLUDE
+\end{proof}","Based on the complex spectral theorem, there is an orthonormal basis of $\left(e_1, \ldots, e_n\right)$ of $V$ consisting of eigenvectors of $T$. Now, let $\lambda_1, \ldots, \lambda_n$ be the corresponding eigenvalues. Therefore,",LET
 "Suppose $T \in \mathcal{L}(V)$ is self-adjoint, $\lambda \in \mathbf{F}$, and $\epsilon>0$. Prove that if there exists $v \in V$ such that $\|v\|=1$ and $\|T v-\lambda v\|<\epsilon,$ then $T$ has an eigenvalue $\lambda^{\prime}$ such that $\left|\lambda-\lambda^{\prime}\right|<\epsilon$.","\begin{proof}
 
     Let $T \in \mathcal{L}(V)$ be a self-adjoint, and let $\lambda \in \mathbf{F}$ and $\epsilon>0$.
@@ -1201,7 +1201,7 @@ Show that 2 is divisible by $(1+i)^{2}$ in $\mathbb{Z}[i]$.,"\begin{proof}
 
 We have $(1+i)^2=1+2 i-1=2 i$, so $2=-i(1+i)^2$.
 
-\end{proof}","We have $(1+i)^2=1+2 i-1=2 i$, so $2=-i(1+i)^2$.",UNKNOWN
+\end{proof}","We have $(1+i)^2=1+2 i-1=2 i$, so $2=-i(1+i)^2$.",EQUALITY
 Define $\wedge(n)=\log p$ if $n$ is a power of $p$ and zero otherwise. Prove that $\sum_{A \mid n} \mu(n / d) \log d$ $=\wedge(n)$.,"\begin{proof}    
 
 $$
@@ -1283,7 +1283,7 @@ $p \mid n^{q-1} - 1, q \mid n^{q-1} - 1$, and $p\wedge q = 1$, so $pq \mid n^{q-
 
 $$n^{q-1} \equiv 1 \pmod{pq}.$$
 
-\end{proof}","As $n \wedge pq = 1, n\wedge p=1, n \wedge q = 1$, so from Fermat's Little Theorem",UNKNOWN
+\end{proof}","As $n \wedge pq = 1, n\wedge p=1, n \wedge q = 1$, so from Fermat's Little Theorem",EQUALITY
 Consider a prime $p$ of the form $4 t+3$. Show that $a$ is a primitive root modulo $p$ iff $-a$ has order $(p-1) / 2$.,"\begin{proof}
 
     Let $a$ a primitive root modulo $p$.
@@ -1565,7 +1565,7 @@ Prove that the power series $\sum zn/n^2$ converges at every point of the unit c
 
     Since $\left|z^n / n^2\right|=1 / n^2$ for all $|z|=1$, then $\sum z^n / n^2$ converges at every point in the unit circle as $\sum 1 / n^2$ does ( $p$-series $p=2$.)
 
-\end{proof}","Since $\left|z^n / n^2\right|=1 / n^2$ for all $|z|=1$, then $\sum z^n / n^2$ converges at every point in the unit circle as $\sum 1 / n^2$ does ( $p$-series $p=2$.)",UNKNOWN
+\end{proof}","Since $\left|z^n / n^2\right|=1 / n^2$ for all $|z|=1$, then $\sum z^n / n^2$ converges at every point in the unit circle as $\sum 1 / n^2$ does ( $p$-series $p=2$.)",EQUALITY
 Suppose $f$ is continuous in a region $\Omega$. Prove that any two primitives of $f$ (if they exist) differ by a constant.,"\begin{proof}
 
     Suppose $F_1$ adn $F_2$ are primitives of $F$. Then $(F_1-F_2)^\prime = f - f = 0$, therefore $F_1$ and $F_2$ differ by a constant. 
@@ -1607,7 +1607,7 @@ $$
 
 Since $k$ is arbitrary, $a_n=0$, a contradiction.
 
-\end{proof}","When $\Omega$ is connected, if $\varphi$ is not linear, then there exists $n \geq 2$ and $a_n \neq 0$, such that",ASSUME
+\end{proof}","When $\Omega$ is connected, if $\varphi$ is not linear, then there exists $n \geq 2$ and $a_n \neq 0$, such that",EXISTENCE
 Show that $ \int_{-\infty}^{\infty} \frac{\cos x}{x^2 + a^2} dx = \pi \frac{e^{-a}}{a}$ for $a > 0$.,"\begin{proof}
 
     $\cos x=\frac{e^{i x}+e^{-i x}}{2}$. changing $x \rightarrow-x$ we see that we can just integrate $e^{i x} /\left(x^2+a^2\right)$ and we'll get the same answer. Again, we use the same semicircle and part of the real line. The only pole is $x=i a$, it has order 1 and the residue at it is $\lim _{x \rightarrow i a} \frac{e^{i x}}{x^2+a^2}(x-i a)=\frac{e^{-a}}{2 i a}$, which multiplied by $2 \pi i$ gives the answer.
@@ -1683,7 +1683,7 @@ $$
 
 which is what we need.
 
-\end{proof}",Consider,UNKNOWN
+\end{proof}",Consider,LET
 Show that there is no holomorphic function $f$ in the unit disc $D$ that extends continuously to $\partial D$ such that $f(z) = 1/z$ for $z \in \partial D$.,"\begin{proof}
 
     Consider $g(r)=\int_{|z|=r} f(z) d z$. Cauchy theorem implies that $g(r)=0$ for all $r<1$. Now since $\left.f\right|_{\partial D}=1 / z$ we have $\lim _{r \rightarrow 1} \int_{|z|=r} f(z) d z=\int_{|z|=1} \frac{1}{z} d z=\frac{2}{\pi i} \neq 0$. Contradiction.
@@ -1743,7 +1743,7 @@ f = |3-2\mathrm{Re}(z_1)-z_3|^2-|1-z_3|^2;
 
 since $3-2\mathrm{Re}(z_1)\ge 1$, $f$ is nonnegative and can be zero only if the real part of $z_1$, and hence also $z_1$ itself, is equal to $1$. 
 
-\end{proof}","It will suffice to show that for any $z_1, z_2, z_3, z_4 \in \mathbb{C}$ of modulus 1 such that $|3-z_1-z_2-z_3-z_4| = |z_1z_2z_3z_4|$, at least one of $z_1, z_2, z_3$ is equal to 1.",UNKNOWN
+\end{proof}","It will suffice to show that for any $z_1, z_2, z_3, z_4 \in \mathbb{C}$ of modulus 1 such that $|3-z_1-z_2-z_3-z_4| = |z_1z_2z_3z_4|$, at least one of $z_1, z_2, z_3$ is equal to 1.",EQUALITY
 "Let $n$ be a positive integer, and let $f_{n}(z)=n+(n-1) z+$ $(n-2) z^{2}+\cdots+z^{n-1}$. Prove that $f_{n}$ has no roots in the closed unit disk $\{z \in \mathbb{C}:|z| \leq 1\}$.","\begin{proof}
 
     Note first that $f_n(1) > 0$, so $1$ is not a root of $f_n$.
@@ -1831,7 +1831,7 @@ $n=2y^2$ (so that $n=y^2+y^2$, $n+1=x^2+0^2$, $n+2=x^2+1^2$)
 
 yields infinitely many $n$ with the desired property.
 
-\end{proof}",It is well-known that the equation $x^2-2y^2=1$ has infinitely,UNKNOWN
+\end{proof}",It is well-known that the equation $x^2-2y^2=1$ has infinitely,EQUALITY
 "Let $(p_n)$ be a sequence and $f:\mathbb{N}\to\mathbb{N}$. The sequence $(q_k)_{k\in\mathbb{N}}$ with $q_k=p_{f(k)}$ is called a rearrangement of $(p_n)$. Show that if $f$ is an injection, the limit of a sequence is unaffected by rearrangement.","\begin{proof}
 
     Let $\varepsilon>0$. Since $p_n \rightarrow L$, we have that, for all $n$ except $n \leq N$, $d\left(p_n, L\right)<\epsilon$. Let $S=\{n \mid f(n) \leq N\}$, let $n_0$ be the largest $n \in S$, we know there is such a largest $n$ because $f(n)$ is injective. Now we have that $\forall n>n_0 f(n)>N$ which implies that $p_{f(n)} \rightarrow L$, as required.
@@ -1931,7 +1931,7 @@ which is connected, while $\operatorname{int}(A)$ is not connected.
 
 To see this consider the continuous function $f: \mathbb{R}^2 \rightarrow \mathbb{R}$ is defined by $f(x, y)=x+y$. Let $U=f^{-1}(0,+\infty)$ which is open in $\mathbb{R}^2$ and so $U \cap \operatorname{int}(A)$ is open in $\operatorname{int}(A)$. Also, since $(0,0) \notin \operatorname{int}(A)$, so for all $(x, y) \in \operatorname{int}(A), f(x, y) \neq 0$ and $U \cap \operatorname{int}(A)=f^{-1}[0,+\infty) \cap \operatorname{int}(A)$ is closed in $\operatorname{int}(A)$. Furthermore, $(1,1)=f^{-1}(2) \in U \cap \operatorname{int}(A)$ shows that $U \cap \operatorname{int}(A) \neq \emptyset$ while $(-1,-1) \in \operatorname{int}(A)$ and $(-1,-1) \notin U$ shows that $U \cap \operatorname{int}(A) \neq \operatorname{int}(A)$.
 
-\end{proof}",Consider $X=\mathbb{R}^2$ and,UNKNOWN
+\end{proof}",Consider $X=\mathbb{R}^2$ and,LET
 Suppose that $E$ is an uncountable subset of $\mathbb{R}$. Prove that there exists a point $p \in \mathbb{R}$ at which $E$ condenses.,"\begin{proof}
 
     I think this is the proof by contrapositive that you were getting at.
@@ -1994,7 +1994,7 @@ $$
 
 converges if and only if $c>1$. 
 
-\end{proof}","Using the integral test, for a set $a$, we see",UNKNOWN
+\end{proof}","Using the integral test, for a set $a$, we see",APPLY
 Show that a group of order 5 must be abelian.,"\begin{proof}
 
     Suppose $G$ is a group of order 5 which is not abelian. Then there exist two non-identity elements $a, b \in G$ such that $a * b \neq$ $b * a$. Further we see that $G$ must equal $\{e, a, b, a * b, b * a\}$. To see why $a * b$ must be distinct from all the others, not that if $a *$ $b=e$, then $a$ and $b$ are inverses and hence $a * b=b * a$.
@@ -2026,7 +2026,7 @@ $$
 
 Hence $m$ is a positive integer such that $a^m=e$ for all $a \in G$.
 
-\end{proof}","Let $n_1, n_2, \ldots, n_k$ be the orders of all $k$ elements of $G=$ $\left\{a_1, a_2, \ldots, a_k\right\}$. Let $m=\operatorname{lcm}\left(n_1, n_2, \ldots, n_k\right)$. Then, for any $i=$ $1, \ldots, k$, there exists an integer $c$ such that $m=n_i c$. Thus",LET
+\end{proof}","Let $n_1, n_2, \ldots, n_k$ be the orders of all $k$ elements of $G=$ $\left\{a_1, a_2, \ldots, a_k\right\}$. Let $m=\operatorname{lcm}\left(n_1, n_2, \ldots, n_k\right)$. Then, for any $i=$ $1, \ldots, k$, there exists an integer $c$ such that $m=n_i c$. Thus",EXISTENCE
 "Let $G$ be a group in which $(a b)^{3}=a^{3} b^{3}$ and $(a b)^{5}=a^{5} b^{5}$ for all $a, b \in G$. Show that $G$ is abelian.","\begin{proof}
 
  We have
@@ -2256,12 +2256,12 @@ We know that order of an element divides the order of the group. Here order of t
 
     Let $G$ be a group of order $p m$, such that $p \nmid m$. Now, Given that $H$ is a normal subgroup of order $p$. Now we want to prove that $H$ is a characterestic subgroup, that is $\phi(H)=H$ for any automorphism $\phi$ of $G$. Now consider $\phi(H)$. Clearly $|\phi(H)|=p$. Suppose $\phi(H) \neq H$, then $H \cap \phi (H)=\{ e\}$. Consider $H \phi(H)$, this is a subgroup of $G$ as $H$ is normal. Also $|H \phi(H)|=p^2$. By lagrange's theorem then $p^2 \mid$ $p m \Longrightarrow p \mid m$ - contradiction. So $\phi(H)=H$, and $H$ is characterestic subgroup of $G$
 
-\end{proof}","Let $G$ be a group of order $p m$, such that $p \nmid m$. Now, Given that $H$ is a normal subgroup of order $p$. Now we want to prove that $H$ is a characterestic subgroup, that is $\phi(H)=H$ for any automorphism $\phi$ of $G$. Now consider $\phi(H)$. Clearly $|\phi(H)|=p$. Suppose $\phi(H) \neq H$, then $H \cap \phi (H)=\{ e\}$. Consider $H \phi(H)$, this is a subgroup of $G$ as $H$ is normal. Also $|H \phi(H)|=p^2$. By lagrange's theorem then $p^2 \mid$ $p m \Longrightarrow p \mid m$ - contradiction. So $\phi(H)=H$, and $H$ is characterestic subgroup of $G$",ASSUME
+\end{proof}","Let $G$ be a group of order $p m$, such that $p \nmid m$. Now, Given that $H$ is a normal subgroup of order $p$. Now we want to prove that $H$ is a characterestic subgroup, that is $\phi(H)=H$ for any automorphism $\phi$ of $G$. Now consider $\phi(H)$. Clearly $|\phi(H)|=p$. Suppose $\phi(H) \neq H$, then $H \cap \phi (H)=\{ e\}$. Consider $H \phi(H)$, this is a subgroup of $G$ as $H$ is normal. Also $|H \phi(H)|=p^2$. By lagrange's theorem then $p^2 \mid$ $p m \Longrightarrow p \mid m$ - contradiction. So $\phi(H)=H$, and $H$ is characterestic subgroup of $G$",LET
 "If $G$ is a nonabelian group of order 6, prove that $G \simeq S_3$.","\begin{proof}
 
     Suppose $G$ is a non-abelian group of order 6 . We need to prove that $G \cong S_3$. Since $G$ is non-abelian, we conclude that there is no element of order 6. Now all the nonidentity element has order either 2 or 3 . All elements cannot be order 3 .This is because except the identity elements there are 5 elements, but order 3 elements occur in pair, that is $a, a^2$, both have order 3 , and $a \neq a^2$. So, this is a contradiction, as there are only 5 elements. So, there must be an element of order 2 . All elements of order 2 will imply that $G$ is abelian, hence there is also element of order 3 . Let $a$ be an element of order 2 , and $b$ be an element of order 3 . So we have $e, a, b, b^2$, already 4 elements. Now $a b \neq e, b, b^2$. So $a b$ is another element distinct from the ones already constructed. $a b^2 \neq e, b, a b, b^2, a$. So, we have got another element distinct from the other. So, now $ G=\left\{e, a, b, b^2, a b, a b^2\right\}$. Also, ba must be equal to one of these elements. But $b a \neq e, a, b, b^2$. Also if $b a=a b$, the group will become abelian. so $b a=a b^2$. So what we finally get is $G=\left\langle a, b \mid a^2=e=b^3, b a=a b^2\right\rangle$. Hence $G \cong S_3$.
 
-\end{proof}","Suppose $G$ is a non-abelian group of order 6 . We need to prove that $G \cong S_3$. Since $G$ is non-abelian, we conclude that there is no element of order 6. Now all the nonidentity element has order either 2 or 3 . All elements cannot be order 3 .This is because except the identity elements there are 5 elements, but order 3 elements occur in pair, that is $a, a^2$, both have order 3 , and $a \neq a^2$. So, this is a contradiction, as there are only 5 elements. So, there must be an element of order 2 . All elements of order 2 will imply that $G$ is abelian, hence there is also element of order 3 . Let $a$ be an element of order 2 , and $b$ be an element of order 3 . So we have $e, a, b, b^2$, already 4 elements. Now $a b \neq e, b, b^2$. So $a b$ is another element distinct from the ones already constructed. $a b^2 \neq e, b, a b, b^2, a$. So, we have got another element distinct from the other. So, now $ G=\left\{e, a, b, b^2, a b, a b^2\right\}$. Also, ba must be equal to one of these elements. But $b a \neq e, a, b, b^2$. Also if $b a=a b$, the group will become abelian. so $b a=a b^2$. So what we finally get is $G=\left\langle a, b \mid a^2=e=b^3, b a=a b^2\right\rangle$. Hence $G \cong S_3$.",ASSUME
+\end{proof}","Suppose $G$ is a non-abelian group of order 6 . We need to prove that $G \cong S_3$. Since $G$ is non-abelian, we conclude that there is no element of order 6. Now all the nonidentity element has order either 2 or 3 . All elements cannot be order 3 .This is because except the identity elements there are 5 elements, but order 3 elements occur in pair, that is $a, a^2$, both have order 3 , and $a \neq a^2$. So, this is a contradiction, as there are only 5 elements. So, there must be an element of order 2 . All elements of order 2 will imply that $G$ is abelian, hence there is also element of order 3 . Let $a$ be an element of order 2 , and $b$ be an element of order 3 . So we have $e, a, b, b^2$, already 4 elements. Now $a b \neq e, b, b^2$. So $a b$ is another element distinct from the ones already constructed. $a b^2 \neq e, b, a b, b^2, a$. So, we have got another element distinct from the other. So, now $ G=\left\{e, a, b, b^2, a b, a b^2\right\}$. Also, ba must be equal to one of these elements. But $b a \neq e, a, b, b^2$. Also if $b a=a b$, the group will become abelian. so $b a=a b^2$. So what we finally get is $G=\left\langle a, b \mid a^2=e=b^3, b a=a b^2\right\rangle$. Hence $G \cong S_3$.",CONTRADICTION
 "Prove that a group of order $p^2$, $p$ a prime, has a normal subgroup of order $p$.","\begin{proof}
 
     We use the result from problem 40 which is as follows: Suppose $G$ is a group, $H$ is a subgroup and $|G|=n$ and $n \nmid\left(i_G(H)\right) !$. Then there exists a normal subgroup $K \neq \{ e \}$ and $K \subseteq H$.
@@ -2365,12 +2365,12 @@ $\phi$ is actually a homomorphism. For any $c^i d^j \in G^{\prime}$ we have $\ph
 
 Suppose now that $\operatorname{gcd}(n . m)>1$. Let $g^k$ be an element of $G$ and $h^j$ be an element of $H$. Since the lowest common multiple of $n$ and $m$ is lower than the product $n . m$, that is, $\operatorname{lcm}(n, m)<n$. $m$, and since $\left(g^k\right)^{l c m(n, m)}=e_G,\left(h^j\right)^{l c m(n, m)}=e_H$, we have $\left(g^k \times h^j\right)^{l c m(n, m)}=e_{G \times H}$. It follows that every element of $G \times H$ has order lower than $n . m$, and therefore $G \times H$ is not cyclic.
 
-\end{proof}","The order of $G \times H$ is $n$. $m$. Thus, $G \times H$ is cyclic iff it has an element with order n. $m$. Suppose $\operatorname{gcd}(n . m)=1$. This implies that $g^m$ has order $n$, and analogously $h^n$ has order $m$. That is, $g \times h$ has order $n$. $m$, and therefore $G \times H$ is cyclic.",ASSUME
+\end{proof}","The order of $G \times H$ is $n$. $m$. Thus, $G \times H$ is cyclic iff it has an element with order n. $m$. Suppose $\operatorname{gcd}(n . m)=1$. This implies that $g^m$ has order $n$, and analogously $h^n$ has order $m$. That is, $g \times h$ has order $n$. $m$, and therefore $G \times H$ is cyclic.",CONCLUDE
 "If $P$ is a $p$-Sylow subgroup of $G$ and $P \triangleleft G$, prove that $P$ is the only $p$-Sylow subgroup of $G$.","\begin{proof}
 
     let $G$ be a group and $P$ a sylow-p subgroup. Given $P$ is normal. By sylow second theorem the sylow-p subgroups are conjugate. Let $K$ be any other sylow-p subgroup. Then there exists $g \in G$ such that $K=g P g^{-1}$. But since $P$ is normal $K=g P g^{-1}=P$. Hence the sylow-p subgroup is unique.
 
-\end{proof}",let $G$ be a group and $P$ a sylow-p subgroup. Given $P$ is normal. By sylow second theorem the sylow-p subgroups are conjugate. Let $K$ be any other sylow-p subgroup. Then there exists $g \in G$ such that $K=g P g^{-1}$. But since $P$ is normal $K=g P g^{-1}=P$. Hence the sylow-p subgroup is unique.,LET
+\end{proof}",let $G$ be a group and $P$ a sylow-p subgroup. Given $P$ is normal. By sylow second theorem the sylow-p subgroups are conjugate. Let $K$ be any other sylow-p subgroup. Then there exists $g \in G$ such that $K=g P g^{-1}$. But since $P$ is normal $K=g P g^{-1}=P$. Hence the sylow-p subgroup is unique.,EXISTENCE
 Show that any subgroup of order $p^{n-1}$ in a group $G$ of order $p^n$ is normal in $G$.,"\begin{proof}
 
 Proof: First we prove the following lemma.
@@ -2604,7 +2604,7 @@ Now our sum is just $\frac{a_1}{(p-1) !}=\frac{a}{b}$.
 
 It follows that $p$ divides $a$. This completes the proof.
 
-\end{proof}",First we prove for prime $p=3$ and then for all prime $p>3$.,UNKNOWN
+\end{proof}",First we prove for prime $p=3$ and then for all prime $p>3$.,EQUALITY
 Let $R$ be the ring of $2 \times 2$ matrices over the real numbers; suppose that $I$ is an ideal of $R$. Show that $I = (0)$ or $I = R$.,"\begin{proof}
 
     Suppose that $I$ is a nontrivial ideal of $R$, and let
@@ -2936,7 +2936,7 @@ Show that there is an infinite number of integers a such that $f(x) = x^7 + 15x^
 
     Via Eisenstein's criterion and observation that 5 divides 15 and $-30$, it is sufficient to find infinitely many $a$ such that 5 divides $a$, but $5^2=25$ doesn't divide $a$. For example $5 \cdot 2^k$ for $k=0,1, \ldots$ is one such infinite sequence.
 
-\end{proof}","Via Eisenstein's criterion and observation that 5 divides 15 and $-30$, it is sufficient to find infinitely many $a$ such that 5 divides $a$, but $5^2=25$ doesn't divide $a$. For example $5 \cdot 2^k$ for $k=0,1, \ldots$ is one such infinite sequence.",UNKNOWN
+\end{proof}","Via Eisenstein's criterion and observation that 5 divides 15 and $-30$, it is sufficient to find infinitely many $a$ such that 5 divides $a$, but $5^2=25$ doesn't divide $a$. For example $5 \cdot 2^k$ for $k=0,1, \ldots$ is one such infinite sequence.",EQUALITY
 Let $V$ be a vector space over an infinite field $F$. Show that $V$ cannot be the set-theoretic union of a finite number of proper subspaces of $V$.,"\begin{proof}
 
     Assume that $V$ can be written as the set-theoretic union of $n$ proper subspaces $U_1, U_2, \ldots, U_n$. Without loss of generality, we may assume that no $U_i$ is contained in the union of other subspaces.
@@ -2953,7 +2953,7 @@ Therefore, we have $|v + Fu| \leq |F| \leq n-1$. However, since $n$ is a finite 
 
 Thus, our assumption that $V$ can be written as the set-theoretic union of proper subspaces is wrong, and the claim is proven.
 
-\end{proof}","Assume that $V$ can be written as the set-theoretic union of $n$ proper subspaces $U_1, U_2, \ldots, U_n$. Without loss of generality, we may assume that no $U_i$ is contained in the union of other subspaces.",UNKNOWN
+\end{proof}","Assume that $V$ can be written as the set-theoretic union of $n$ proper subspaces $U_1, U_2, \ldots, U_n$. Without loss of generality, we may assume that no $U_i$ is contained in the union of other subspaces.",ASSUME
 Prove that $\cos 1^{\circ}$  is algebraic over $\mathbb{Q}$.,"\begin{proof}
 
     Since $\left(\cos \left(1^{\circ}\right)+i \sin \left(1^{\circ}\right)\right)^{360}=1$, the number $\cos \left(1^{\circ}\right)+i \sin \left(1^{\circ}\right)$ is algebraic. And the real part and the imaginary part of an algebraic number are always algebraic numbers.
@@ -2976,7 +2976,7 @@ We have $3|3,3| 0$ but $3 \nmid 1$ and $3^2 \nmid 3$. Thus the polynomial is irr
 
     Since $a$ and $b$ commute, for any $g, h\in H$ we can write $g=a^ib^j$ and $h = a^kb^l$. Then $gh = a^ib^ja^kb^l = a^kb^la^ib^j = hg$. Thus $H$ is abelian. 
 
-\end{proof}","Since $a$ and $b$ commute, for any $g, h\in H$ we can write $g=a^ib^j$ and $h = a^kb^l$. Then $gh = a^ib^ja^kb^l = a^kb^la^ib^j = hg$. Thus $H$ is abelian.",CONCLUDE
+\end{proof}","Since $a$ and $b$ commute, for any $g, h\in H$ we can write $g=a^ib^j$ and $h = a^kb^l$. Then $gh = a^ib^ja^kb^l = a^kb^la^ib^j = hg$. Thus $H$ is abelian.",EQUALITY
 "Prove that if a group contains exactly one element of order 2 , then that element is in the center of the group.","\begin{proof}
 
    Let $x$ be the element of order two. Consider the element $z=y^{-1} x y$, we have: $z^2=\left(y^{-1} x y\right)^2=\left(y^{-1} x y\right)\left(y^{-1} x y\right)=e$. So: $z=x$, and $y^{-1} x y=x$. So: $x y=y x$. So: $x$ is in the center of $G$. 
@@ -3036,7 +3036,7 @@ $$
 
 Therefore, $G$ is abelian.
 
-\end{proof}","We have that $G / Z(G)$ is cyclic, and so there is an element $x \in G$ such that $G / Z(G)=\langle x Z(G)\rangle$, where $x Z(G)$ is the coset with representative $x$. Now let $g \in G$",UNKNOWN
+\end{proof}","We have that $G / Z(G)$ is cyclic, and so there is an element $x \in G$ such that $G / Z(G)=\langle x Z(G)\rangle$, where $x Z(G)$ is the coset with representative $x$. Now let $g \in G$",LET
 "Prove that no group of order $p^2 q$, where $p$ and $q$ are prime, is simple.","\begin{proof}
 
     We may as well assume $p<q$. The number of Sylow $q$-subgroups is $1 \bmod q$ and divides $p^2$. So it is $1, p$, or $p^2$. We win if it's 1 and it can't be $p$, so suppose it's $p^2$. But now $q \mid p^2-1$, so $q \mid p+1$ or $q \mid p-1$.
@@ -3048,7 +3048,7 @@ Thus $p=2$ and $q=3$. But we know no group of order 36 is simple.
 
     Let $H = \langle bab^2, bab^3\rangle$. It is clear that $H\subset \langle a, b\rangle$. Note that $(bab^2)^{-1}(bab^3)=b$, therefore $b\in H$. This then implies that $b^{-1}(bab^2)b^{-2}=a\in H$. Thus $\langle a, b\rangle\subset H$.  
 
-\end{proof}","Let $H = \langle bab^2, bab^3\rangle$. It is clear that $H\subset \langle a, b\rangle$. Note that $(bab^2)^{-1}(bab^3)=b$, therefore $b\in H$. This then implies that $b^{-1}(bab^2)b^{-2}=a\in H$. Thus $\langle a, b\rangle\subset H$.",LET
+\end{proof}","Let $H = \langle bab^2, bab^3\rangle$. It is clear that $H\subset \langle a, b\rangle$. Note that $(bab^2)^{-1}(bab^3)=b$, therefore $b\in H$. This then implies that $b^{-1}(bab^2)b^{-2}=a\in H$. Thus $\langle a, b\rangle\subset H$.",CONCLUDE
 "Prove that in the ring $\mathbb{Z}[x],(2) \cap(x)=(2 x)$.","\begin{proof}
 
     Let $f(x) \in(2 x)$. Then there exists some polynomial $g(x) \in \mathbb{Z}$ such that
@@ -3113,7 +3113,7 @@ Finally,
 
 as required.
 
-\end{proof}",Let $f(x) \in(2 x)$. Then there exists some polynomial $g(x) \in \mathbb{Z}$ such that,LET
+\end{proof}",Let $f(x) \in(2 x)$. Then there exists some polynomial $g(x) \in \mathbb{Z}$ such that,EXISTENCE
 "Let $I, J$ be ideals in a ring $R$. Prove that the residue of any element of $I \cap J$ in $R / I J$ is nilpotent.","\begin{proof}
 
     If $x$ is in $I \cap J, x \in I$ and $x \in J . R / I J=\{r+a b: a \in I, b \in J, r \in R\}$. Then $x \in I \cap J \Rightarrow x \in I$ and $x \in J$, and so $x^2 \in I J$. Thus
@@ -3143,7 +3143,7 @@ Prove that $x^2+1$ is irreducible in $\mathbb{F}_7$,"\begin{proof}
 
     If $p(x)=x^2+1$ were reducible, its factors must be linear. But no $p(a)$ for $a\in\mathbb{F}_7$ evaluates to 0, therefore $x^2+1$ is irreducible. 
 
-\end{proof}","If $p(x)=x^2+1$ were reducible, its factors must be linear. But no $p(a)$ for $a\in\mathbb{F}_7$ evaluates to 0, therefore $x^2+1$ is irreducible.",COMPUTE
+\end{proof}","If $p(x)=x^2+1$ were reducible, its factors must be linear. But no $p(a)$ for $a\in\mathbb{F}_7$ evaluates to 0, therefore $x^2+1$ is irreducible.",CONCLUDE
 Let $p$ be a prime integer. Prove that the polynomial $x^n-p$ is irreducible in $\mathbb{Q}[x]$.,"\begin{proof}
 
    Straightforward application of Eisenstein's criterion with $p$.  
@@ -3301,7 +3301,7 @@ $$
 
 Thus $G$ is abelian.
 
-\end{proof}","Solution: Note that since $x^2=1$ for all $x \in G$, we have $x^{-1}=x$. Now let $a, b \in G$. We have",UNKNOWN
+\end{proof}","Solution: Note that since $x^2=1$ for all $x \in G$, we have $x^{-1}=x$. Now let $a, b \in G$. We have",LET
 "If $x$ is an element of infinite order in $G$, prove that the elements $x^{n}, n \in \mathbb{Z}$ are all distinct.","\begin{proof}
 
     Solution: Suppose to the contrary that $x^a=x^b$ for some $0 \leq a<b \leq n-1$. Then we have $x^{b-a}=1$, with $1 \leq b-a<n$. However, recall that $n$ is by definition the least integer $k$ such that $x^k=1$, so we have a contradiction. Thus all the $x^i$, $0 \leq i \leq n-1$, are distinct. In particular, we have
@@ -3314,7 +3314,7 @@ $$
 
 so that $|x|=n \leq|G|$
 
-\end{proof}","Solution: Suppose to the contrary that $x^a=x^b$ for some $0 \leq a<b \leq n-1$. Then we have $x^{b-a}=1$, with $1 \leq b-a<n$. However, recall that $n$ is by definition the least integer $k$ such that $x^k=1$, so we have a contradiction. Thus all the $x^i$, $0 \leq i \leq n-1$, are distinct. In particular, we have",ASSUME
+\end{proof}","Solution: Suppose to the contrary that $x^a=x^b$ for some $0 \leq a<b \leq n-1$. Then we have $x^{b-a}=1$, with $1 \leq b-a<n$. However, recall that $n$ is by definition the least integer $k$ such that $x^k=1$, so we have a contradiction. Thus all the $x^i$, $0 \leq i \leq n-1$, are distinct. In particular, we have",DEFINITION
 Prove that the multiplicative groups $\mathbb{R}-\{0\}$ and $\mathbb{C}-\{0\}$ are not isomorphic.,"\begin{proof}
 
     Isomorphic groups necessarily have the same number of elements of order $n$ for all finite $n$.
@@ -3335,7 +3335,7 @@ Similarly, if $|x|>1$ (absolute value) then $x$ has infinite order in $\mathbb{R
 
 In $\mathbb{C}^{\times}$, on the other hand, $i$ has order 4 . Thus $\mathbb{R}^{\times}$and $\mathbb{C}^{\times}$are not isomorphic.
 
-\end{proof}",Isomorphic groups necessarily have the same number of elements of order $n$ for all finite $n$.,UNKNOWN
+\end{proof}",Isomorphic groups necessarily have the same number of elements of order $n$ for all finite $n$.,UNIVERSAL
 Let $G$ be any group. Prove that the map from $G$ to itself defined by $g \mapsto g^{-1}$ is a homomorphism if and only if $G$ is abelian.,"\begin{proof}
 
     $(\Rightarrow)$ Suppose $G$ is abelian. Then
@@ -3430,7 +3430,7 @@ We know $N$ is a subgroup of $G$.
 
 For any $g \in G$ and any $n \in N$, we must have $n \in N_\alpha$ for each $\alpha$. And since $N_\alpha \unlhd G$, we have $g n g^{-1} \in N_\alpha$ for each $\alpha$. Therefore $g n g^{-1} \in N$, which shows that $g N g^{-1} \subseteq N$ for each $g \in G$. As before, this is enough to complete the proof.
 
-\end{proof}","Proof. Let $G$ be a group and let $I$ be a nonempty set of indices, not necessarily countable. Consider the collection of subgroups $\left\{N_\alpha \mid \alpha \in I\right\}$, where $N_\alpha \unlhd G$ for each $\alpha \in I$. Let",UNKNOWN
+\end{proof}","Proof. Let $G$ be a group and let $I$ be a nonempty set of indices, not necessarily countable. Consider the collection of subgroups $\left\{N_\alpha \mid \alpha \in I\right\}$, where $N_\alpha \unlhd G$ for each $\alpha \in I$. Let",LET
 Prove that $\mathbb{Q}$ has no proper subgroups of finite index.,"\begin{proof}
 
     Solution: We begin with a lemma.
@@ -3452,7 +3452,7 @@ Suppose $G$ is infinite. If $x \in G$ is a nonidentity element of finite order, 
 
 Suppose $G$ is finite; say $|G|=n$. If $n$ is composite, say $n=p m$ for some prime $p$ with $m \neq 1$, then by Cauchy's Theorem $G$ contains an element $x$ of order $p$ and $\langle x\rangle$ is a nontrivial normal subgroup. Hence $G$ is not simple. Thus if $G$ is an abelian simple group, then $|G|=p$ is prime. We saw previously that the only such group up to isomorphism is $\mathbb{Z} /(p)$, so that $G \cong \mathbb{Z} /(p)$. Moreover, these groups are indeed simple.
 
-\end{proof}",Solution: Let $G$ be an abelian simple group.,UNKNOWN
+\end{proof}",Solution: Let $G$ be an abelian simple group.,LET
 Prove that subgroups of a solvable group are solvable.,"\begin{proof}
 
     Let $G$ be a solvable group and let $H \leq G$. Since $G$ is solvable, we may find a chain of subgroups
@@ -3588,7 +3588,7 @@ Let $G$ be a finite group of composite order $n$ with the property that $G$ has 
 
     Solution: Let $p$ be the smallest prime dividing $n$, and write $n=p m$. Now $G$ has a subgroup $H$ of order $m$, and $H$ has index $p$. Then $H$ is normal in $G$.
 
-\end{proof}","Solution: Let $p$ be the smallest prime dividing $n$, and write $n=p m$. Now $G$ has a subgroup $H$ of order $m$, and $H$ has index $p$. Then $H$ is normal in $G$.",UNKNOWN
+\end{proof}","Solution: Let $p$ be the smallest prime dividing $n$, and write $n=p m$. Now $G$ has a subgroup $H$ of order $m$, and $H$ has index $p$. Then $H$ is normal in $G$.",LET
 Prove that characteristic subgroups are normal.,"\begin{proof}
 
     Let $H$ be a characterestic subgroup of $G$. By definition $\alpha(H) \subset H$ for every $\alpha \in \operatorname{Aut}(G)$. So, $H$ is in particular invariant under the inner automorphism. Let $\phi_g$ denote the conjugation automorphism by $g$. Then $\phi_g(H) \subset H \Longrightarrow$ $g H g^{-1} \subset H$. So, $H$ is normal. 
@@ -3610,12 +3610,12 @@ Prove that a group of order 312 has a normal Sylow $p$-subgroup for some prime $
 
 
 
-\end{proof}","Since $|G|=351=3^{2}.13$, $G$ has $3-$Sylow subgroup of order $9$, as well as $13-$Sylow subgroup of order $13$. Now, we count the number of such subgroups. Let $n_{13}$ be the number of $13-$Sylow subgroup and $n_{3}$ be the number of  $3-$Sylow subgroup. Now $n_{13}=1+13k$ where $1+13k|9$. The choices for $k$ is $0$. Hence, there is a unique $13-$Sylow subgroup and hence is normal.",UNKNOWN
+\end{proof}","Since $|G|=351=3^{2}.13$, $G$ has $3-$Sylow subgroup of order $9$, as well as $13-$Sylow subgroup of order $13$. Now, we count the number of such subgroups. Let $n_{13}$ be the number of $13-$Sylow subgroup and $n_{3}$ be the number of  $3-$Sylow subgroup. Now $n_{13}=1+13k$ where $1+13k|9$. The choices for $k$ is $0$. Hence, there is a unique $13-$Sylow subgroup and hence is normal.",LET
 "Let $|G|=p q r$, where $p, q$ and $r$ are primes with $p<q<r$. Prove that $G$ has a normal Sylow subgroup for either $p, q$ or $r$.","\begin{proof}
 
     Let $|G|=p q r$. We also assume $p<q<r$. We prove that $G$ has a normal Sylow subgroup of $p$, $q$ or $r$. Now, Let $n_p, n_q, n_r$ be the number of Sylow-p subgroup, Sylow-q subgroup, Sylow-r subgroup resp. So, we have $n_r=1+r k$ such that $1+r k \mid p q$. So, in this case as $r$ is greatest $n_r$ can be 1 or $p q$. We assume $n_r=p q$. Now we have $n_q=1+q k$ such that $1+q k \mid p r$. Now,as $p<q<r, n_q$ can be 1 or $r$, or $p r$. Assume that $n_q=r$. Now we turn to $n_p$. Again my similar method we can conclude $n_p$ can be $1, q, r$, or $q r$. We assume that $n_p$ is $q$. Now we count the number of elements of order $p, q, r$. Since $n_r=p q$, the number of elements of order $r$ is $p q(r-1)$. Since $n_q=r$, the number of elements of order $q$ is $(q-1) r$. And as $n_p=q$, the number of elements of order $p$ is $(p-1) q$. So, in total we get $p q(r-1)+(q-1) r+(p-$ 1) $q=p q r+q r-r-q=p q r+r(q-1)-r$. But observe that as $q>1, r(q-1)-r>$ 0 . So the number of elements exceeds $p q r$. So, it proves that atleast $n_p$ or $n_q$ or $n_r$ is 1, which ultimately proves the result, because a unique Sylow-p subgroup is always normal.
 
-\end{proof}","Let $|G|=p q r$. We also assume $p<q<r$. We prove that $G$ has a normal Sylow subgroup of $p$, $q$ or $r$. Now, Let $n_p, n_q, n_r$ be the number of Sylow-p subgroup, Sylow-q subgroup, Sylow-r subgroup resp. So, we have $n_r=1+r k$ such that $1+r k \mid p q$. So, in this case as $r$ is greatest $n_r$ can be 1 or $p q$. We assume $n_r=p q$. Now we have $n_q=1+q k$ such that $1+q k \mid p r$. Now,as $p<q<r, n_q$ can be 1 or $r$, or $p r$. Assume that $n_q=r$. Now we turn to $n_p$. Again my similar method we can conclude $n_p$ can be $1, q, r$, or $q r$. We assume that $n_p$ is $q$. Now we count the number of elements of order $p, q, r$. Since $n_r=p q$, the number of elements of order $r$ is $p q(r-1)$. Since $n_q=r$, the number of elements of order $q$ is $(q-1) r$. And as $n_p=q$, the number of elements of order $p$ is $(p-1) q$. So, in total we get $p q(r-1)+(q-1) r+(p-$ 1) $q=p q r+q r-r-q=p q r+r(q-1)-r$. But observe that as $q>1, r(q-1)-r>$ 0 . So the number of elements exceeds $p q r$. So, it proves that atleast $n_p$ or $n_q$ or $n_r$ is 1, which ultimately proves the result, because a unique Sylow-p subgroup is always normal.",LET
+\end{proof}","Let $|G|=p q r$. We also assume $p<q<r$. We prove that $G$ has a normal Sylow subgroup of $p$, $q$ or $r$. Now, Let $n_p, n_q, n_r$ be the number of Sylow-p subgroup, Sylow-q subgroup, Sylow-r subgroup resp. So, we have $n_r=1+r k$ such that $1+r k \mid p q$. So, in this case as $r$ is greatest $n_r$ can be 1 or $p q$. We assume $n_r=p q$. Now we have $n_q=1+q k$ such that $1+q k \mid p r$. Now,as $p<q<r, n_q$ can be 1 or $r$, or $p r$. Assume that $n_q=r$. Now we turn to $n_p$. Again my similar method we can conclude $n_p$ can be $1, q, r$, or $q r$. We assume that $n_p$ is $q$. Now we count the number of elements of order $p, q, r$. Since $n_r=p q$, the number of elements of order $r$ is $p q(r-1)$. Since $n_q=r$, the number of elements of order $q$ is $(q-1) r$. And as $n_p=q$, the number of elements of order $p$ is $(p-1) q$. So, in total we get $p q(r-1)+(q-1) r+(p-$ 1) $q=p q r+q r-r-q=p q r+r(q-1)-r$. But observe that as $q>1, r(q-1)-r>$ 0 . So the number of elements exceeds $p q r$. So, it proves that atleast $n_p$ or $n_q$ or $n_r$ is 1, which ultimately proves the result, because a unique Sylow-p subgroup is always normal.",ASSUME
 Prove that a group of order 200 has a normal Sylow 5-subgroup.,"\begin{proof}
 
     Let $G$ be a group of order $200=5^2 \cdot 8$. Note that 5 is a prime not dividing 8 . Let $P \in$ $S y l_5(G)$. [We know $P$ exists since $S y l_5(G) \neq \emptyset$ by Sylow's Theorem]
@@ -3631,7 +3631,7 @@ Prove that if $|G|=1365$ then $G$ is not simple.,"\begin{proof}
 
 Since $|G|=1365=3.5.7.13$, $G$ has $13-$Sylow subgroup of order $13$. Now, we count the number of such subgroups. Let $n_{13}$ be the number of $13-$Sylow subgroup. Now $n_{13}=1+13k$ where $1+13k|3.5.7$. The choices for $k$ is $0$. Hence, there is a unique $13-$Sylow subgroup and hence is normal. so $G$ is not simple.
 
-\end{proof}","Since $|G|=1365=3.5.7.13$, $G$ has $13-$Sylow subgroup of order $13$. Now, we count the number of such subgroups. Let $n_{13}$ be the number of $13-$Sylow subgroup. Now $n_{13}=1+13k$ where $1+13k|3.5.7$. The choices for $k$ is $0$. Hence, there is a unique $13-$Sylow subgroup and hence is normal. so $G$ is not simple.",UNKNOWN
+\end{proof}","Since $|G|=1365=3.5.7.13$, $G$ has $13-$Sylow subgroup of order $13$. Now, we count the number of such subgroups. Let $n_{13}$ be the number of $13-$Sylow subgroup. Now $n_{13}=1+13k$ where $1+13k|3.5.7$. The choices for $k$ is $0$. Hence, there is a unique $13-$Sylow subgroup and hence is normal. so $G$ is not simple.",LET
 Prove that if $|G|=132$ then $G$ is not simple.,"\begin{proof}    
 
 Since $|G|=132=2^{2}.3.11$, $G$ has $2-$Sylow subgroup of order $4$, as well as $11-$Sylow subgroup of order $11$, and $3-$Sylow subgroup of order $3$. Now, we count the number of such subgroups. Let $n_{11}$ be the number of  $11-$Sylow subgroup and $n_{3}$ be the number of  $3-$Sylow subgroup. Now $n_{11}=1+11k$ where $1+11k|12$. The choices for $k$ are $0$ or $1$. If $k=0$, there is only one $11-$Sylow subgroup and hence normal. So, assume now, that there are $12$ $11-$Sylow subgroup(for $k=1$). Now we look at $3-$ Sylow subgroups. $n_{3}=1+3k| 44$. So choice for $k$ are $0$, $1$, and $7$. If $k=0$, there is only one $3-$Sylow subgroup and hence normal. So, assume now, that there are $4$ $2-$Sylow subgroup (for $k=3$). Now we claim that simultaneously, there cannot be $12$ $11-$Sylow subgroup and $4$ $3-$Sylow subgroups provided there is more than one $2-$Sylow subgroups. So, either $2-$Sylow subgroup is normal or if not, then, either $11-$Sylow subgroup is normal being unique, or  the $3-$Sylow subgroup is normal(We don't consider the possibility of $22$ $3-$Sylow subgroup because of obvious reason). Now, to prove the claim, we observe that there are $120$ elements of order $11$. Also there are $8$ elements of order $3$. So we already get $120+8+1=129$ distinct elements in the group. Let us count the number of $2-$Sylow subgroups in $G$. $n_{2}=1+2k|33$. The possibilities for $k$ are $0$, $1$, $5$, $16$. Now, assume there is more than one $2-$Sylow subgroups. Let $H_{1}$ and $H_{2}$ be two distinct  $2-$Sylow subgroup. Now $|H_{1}|=4$. So we already get $129+3=132$ distinct elements in the group. Now $H_{2}$ being distinct from $H_{1}$, has at least one element which is not in $H_{1}$. This adds one more element in the group, at the least. Now already we have number of elements in the group exceeding the number of element in $G$. This gives a contradiction and proves the claim.
@@ -3647,7 +3647,7 @@ Let $G$ be a group of order 105. Prove that if a Sylow 3-subgroup of $G$ is norm
 
 Similarly, one can argue the same for $K$ and deduce that Sylow-7 subgroup of $G$ is unique and hence normal. So, the first part of the problem is done.
 
-\end{proof}","Given that $G$ is a group of order $1575=3^2 .5^2 .7$. Now, Let $n_p$ be the number of Sylow-p subgroups. It is given that Sylow-3 subgroup is normal and hence is unique, so $n_3=1$. First we prove that both Sylow-5 subgroup and Sylow 7-subgroup are normal. Let $P$ be the Sylow3 subgroup. Now, Consider $G / P$, which has order $5^2 .7$. Now, the number of Sylow $-5$ subgroup of $G / P$ is given by $1+5 k$, where $1+5 k \mid 7$. Clearly $k=0$ is the only choice and hence there is a unique Sylow-5 subgroup of $G / P$, and hence normal. In the same way Sylow-7 subgroup of $G / P$ is also unique and hence normal. Consider now the canonical map $\pi: G \rightarrow G / P$. The inverse image of Sylow-5 subgroup of $G / P$ under $\pi$, call it $H$, is a normal subgroup of $G$, and $|H|=3^2 .5^2$. Similarly, the inverse image of Sylow-7 subgroup of $G / P$ under $\pi$ call it $K$ is also normal in $G$ and $|K|=3^2 .7$. Now, consider $H$. Observe first that the number of Sylow-5 subgroup in $H$ is $1+5 k$ such that $1+5 k \mid 9$. Again $k=0$ and hence $H$ has a unique Sylow-5 subgroup, call it $P_1$. But, it is easy to see that $P_1$ is also a Sylow-5 subgroup of $G$, because $\left|P_1\right|=25$. But now any other Sylow 5 subgroup of $G$ is of the form $g P_1 g^{-1}$ for some $g \in G$. But observe that since $P_1 \subset H$ and $H$ is normal in $G$, so $g P_1 g^1 \subset H$, and $g P_1 g^{-1}$ is also Sylow-5 subgroup of $H$. But, then as Sylow-5 subgroup of $H$ is unique we have $g P_1 g^{-1}=P_1$. This shows that Sylow-5 subgroup of $G$ is unique and hence normal in $G$.",SIMPLIFY
+\end{proof}","Given that $G$ is a group of order $1575=3^2 .5^2 .7$. Now, Let $n_p$ be the number of Sylow-p subgroups. It is given that Sylow-3 subgroup is normal and hence is unique, so $n_3=1$. First we prove that both Sylow-5 subgroup and Sylow 7-subgroup are normal. Let $P$ be the Sylow3 subgroup. Now, Consider $G / P$, which has order $5^2 .7$. Now, the number of Sylow $-5$ subgroup of $G / P$ is given by $1+5 k$, where $1+5 k \mid 7$. Clearly $k=0$ is the only choice and hence there is a unique Sylow-5 subgroup of $G / P$, and hence normal. In the same way Sylow-7 subgroup of $G / P$ is also unique and hence normal. Consider now the canonical map $\pi: G \rightarrow G / P$. The inverse image of Sylow-5 subgroup of $G / P$ under $\pi$, call it $H$, is a normal subgroup of $G$, and $|H|=3^2 .5^2$. Similarly, the inverse image of Sylow-7 subgroup of $G / P$ under $\pi$ call it $K$ is also normal in $G$ and $|K|=3^2 .7$. Now, consider $H$. Observe first that the number of Sylow-5 subgroup in $H$ is $1+5 k$ such that $1+5 k \mid 9$. Again $k=0$ and hence $H$ has a unique Sylow-5 subgroup, call it $P_1$. But, it is easy to see that $P_1$ is also a Sylow-5 subgroup of $G$, because $\left|P_1\right|=25$. But now any other Sylow 5 subgroup of $G$ is of the form $g P_1 g^{-1}$ for some $g \in G$. But observe that since $P_1 \subset H$ and $H$ is normal in $G$, so $g P_1 g^1 \subset H$, and $g P_1 g^{-1}$ is also Sylow-5 subgroup of $H$. But, then as Sylow-5 subgroup of $H$ is unique we have $g P_1 g^{-1}=P_1$. This shows that Sylow-5 subgroup of $G$ is unique and hence normal in $G$.",LET
 "Prove that a subgroup $H$ of $G$ is normal if and only if $[G, H] \leq H$.","\begin{proof}
 
     $H \unlhd G$ is equivalent to $g^{-1} h g \in H, \forall g \in G, \forall h \in H$. We claim that holds if and only if $h^{-1} g^{-1} h g \in H, \forall g \in G, \forall h \in H$, i.e., $\left\{h^{-1} g^{-1} h g: h \in H, g \in G\right\} \subseteq H$. That holds by the following argument:
@@ -3698,7 +3698,7 @@ $$
 
 Thus $a b+b a=0$, and we have $a b=-b a$. But then $a b=b a$. Thus $R$ is commutative.
 
-\end{proof}","Solution: Note first that for all $a \in R$,",UNKNOWN
+\end{proof}","Solution: Note first that for all $a \in R$,",UNIVERSAL
 "Let $G=\left\{g_{1}, \ldots, g_{n}\right\}$ be a finite group. Prove that the element $N=g_{1}+g_{2}+\ldots+g_{n}$ is in the center of the group ring $R G$.","\begin{proof}
 
     Let $M=\sum_{i=1}^n r_i g_i$ be an element of $R[G]$. Note that for each $g_i \in G$, the action of $g_i$ on $G$ by conjugation permutes the subscripts. Then we have the following.
@@ -3773,7 +3773,7 @@ Thus $p \mathbb{Z} / p^m \mathbb{Z}$ is nilpotent in $\mathbb{Z} / p^m \mathbb{Z
 
     Note that there is some $k \in \mathbb{Z}$ such that $M^{d d^{\prime}} \equiv M^{k \varphi(N)+1} \equiv\left(M^{\varphi(N)}\right)^k \cdot M \bmod N$. By Euler's Theorem we have $M^{\varphi(N)} \equiv 1 \bmod N$, so that $M_1^{d^{\prime}} \equiv M \bmod N$.
 
-\end{proof}","Note that there is some $k \in \mathbb{Z}$ such that $M^{d d^{\prime}} \equiv M^{k \varphi(N)+1} \equiv\left(M^{\varphi(N)}\right)^k \cdot M \bmod N$. By Euler's Theorem we have $M^{\varphi(N)} \equiv 1 \bmod N$, so that $M_1^{d^{\prime}} \equiv M \bmod N$.",UNKNOWN
+\end{proof}","Note that there is some $k \in \mathbb{Z}$ such that $M^{d d^{\prime}} \equiv M^{k \varphi(N)+1} \equiv\left(M^{\varphi(N)}\right)^k \cdot M \bmod N$. By Euler's Theorem we have $M^{\varphi(N)} \equiv 1 \bmod N$, so that $M_1^{d^{\prime}} \equiv M \bmod N$.",EXISTENCE
 "Prove that if an integer is the sum of two rational squares, then it is the sum of two integer squares.","\begin{proof}
 
     Let $n=\frac{a^2}{b^2}+\frac{c^2}{d^2}$, or, equivalently, $n(b d)^2=a^2 d^2+c^2 b^2$. From this, we see that $n(b d)^2$ can be written as a sum of two squared integers. Therefore, if $q \equiv 3(\bmod 4)$ and $q^i$ appears in the prime power factorization of $n, i$ must be even. Let $j \in \mathbb{N} \cup\{0\}$ such that $q^j$ divides $b d$. Then $q^{i-2 j}$ divides $n$. But since $i$ is even, $i-2 j$ is even as well. Consequently, $n$ can be written as a sum of two squared integers.
