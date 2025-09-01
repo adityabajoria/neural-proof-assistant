@@ -10,7 +10,7 @@ Rudin|exercise_1_1a,"If $r$ is rational $(r \neq 0)$ and $x$ is irrational, prov
 open real complex
 open topological_space
 open filter
-open_locale real 
+open_locale real
 open_locale topology
 open_locale big_operators
 open_locale complex_conjugate
