@@ -20,18 +20,14 @@ LOGIC = 10
 SET_THEORY = 11
 
 SUBJECT_ID2NAME = {
-    0: "Abstract Algebra",
-    1: "Linear Algebra",
-    2: "Number Theory",
-    3: "Real Analysis",
-    4: "Complex Analysis",
-    5: "Topology",
-    6: "Combinatorics",
-    7: "Probability & Statistics",
-    8: "Geometry",
-    9: "Calculus",
-    10: "Mathematical Logic",
-    11: "Set Theory",
+    0: "Linear Algebra",
+    1: "Number Theory",
+    2: "Combinatorics",
+    3: "Probability & Statistics",
+    4: "Geometry",
+    5: "Calculus",
+    6: "Mathematical Logic",
+    7: "Set Theory",
 }
 
 # ===== Utilities =====
@@ -113,20 +109,7 @@ def lf_la_latex(row):
         return LINEAR_ALGEBRA
     return ABSTAIN
 
-# ------------------------------------------------------------------------------------
-# ABSTRACT ALGEBRA
-# ------------------------------------------------------------------------------------
-@labeling_function()
-def lf_alg_keywords(row):
-    t = _t(row.text)
-    if _any(t, [
-        "group", "groups", "ring", "rings", "field", "fields",
-        "ideal", "ideals", "module", "modules",
-        "homomorphism", "isomorphism", "subgroup", "normal subgroup", "quotient group", "coset"
-    ]):
-        if not _regex(t, NT_NEG):  # avoid number theory tokens
-            return ALGEBRA
-    return ABSTAIN
+
 
 @labeling_function()
 def lf_alg_regex(row):
@@ -190,34 +173,6 @@ def lf_calc_latex(row):
         r"\\nabla",                                # gradient
     ]):
         return CALCULUS
-    return ABSTAIN
-
-# ------------------------------------------------------------------------------------
-# COMPLEX ANALYSIS
-# ------------------------------------------------------------------------------------
-@labeling_function()
-def lf_ca_keywords(row):
-    t = _t(row.text)
-    if _any(t, [
-        "holomorphic", "analytic", "meromorphic",
-        "cauchy-riemann", "residue", "contour", "laurent", "pole", "singularity"
-    ]):
-        if not _regex(t, CA_NEG):  # avoid epsilon-delta purely real-analysis language
-            return COMPLEX_ANALYSIS
-    return ABSTAIN
-
-@labeling_function()
-def lf_ca_latex(row):
-    t = _t(row.text)
-    if _regex_any(t, [
-        r"\\mathbb\{C\}",
-        r"\\oint",                                 # contour integral
-        r"\\operatorname\{Res\}|\\mathrm\{Res\}",  # Res
-        r"e\^\{i",                                 # e^{iθ}
-        r"\\overline\{z\}",                        # \overline{z}
-        r"cauchy[- ]?riemann",
-    ]):
-        return COMPLEX_ANALYSIS
     return ABSTAIN
 
 # ------------------------------------------------------------------------------------
@@ -361,14 +316,11 @@ def get_subject_lfs():
         # very specific, latex-heavy first
         lf_nt_latex, lf_nt_keywords,
         lf_la_latex, lf_la_keywords,
-        lf_alg_regex, lf_alg_keywords,
-        lf_ca_latex, lf_ca_keywords,
-        lf_ra_latex, lf_ra_keywords,
+        lf_alg_regex,lf_ra_latex, lf_ra_keywords,
         lf_calc_latex, lf_calc_keywords,
         lf_prob_latex, lf_prob_keywords,
         lf_comb_latex, lf_comb_keywords,
         lf_geom_regex, lf_geom_keywords,
         lf_logic_latex, lf_logic_keywords,
         lf_set_latex, lf_set_keywords,
-        # NOTE: no topology LFs included → effectively disabled
     ]

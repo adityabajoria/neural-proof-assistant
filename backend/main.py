@@ -1,26 +1,31 @@
-# app.py
+# main.py
 import os
 import torch
 import numpy as np
 import joblib
 import matplotlib
-matplotlib.use("Agg")  # headless-friendly backend
+matplotlib.use("Agg")  # headless backend
 import matplotlib.pyplot as plt
 import io
 import base64
 import logging
-from typing import Dict, Any, Optional
+from typing import Dict, Optional
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+
 from vae import ProofVAE
 from math_subjects import SUBJECT_ID2NAME
 from proof_tactics import TACTIC_NAMES
+from sklearn.feature_extraction.text import CountVectorizer
 
+# -------------------------------------------------
+# Logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-## Resolve paths
+# -------------------------------------------------
+# Paths & Config
 BACKEND_DIR = os.path.abspath(os.path.dirname(__file__))
 MODELS_DIR = os.environ.get("NPA_MODELS_DIR", os.path.join(BACKEND_DIR, "models"))
 
@@ -39,32 +44,27 @@ VOCAB_SIZE = int(os.environ.get("VAE_VOCAB_SIZE", 1000))
 SEQ_LEN = int(os.environ.get("VAE_SEQ_LEN", 50))
 VAE_WEIGHTS = os.environ.get("VAE_WEIGHTS", os.path.join(BACKEND_DIR, "models", "proofvae.pt"))
 
-# Create VAE instance (but don't crash if weights missing)
-try:
-    VAE = ProofVAE(vocab_size=VOCAB_SIZE, seq_len=SEQ_LEN).to(device)
-    if os.path.exists(VAE_WEIGHTS):
-        VAE.load_state_dict(torch.load(VAE_WEIGHTS, map_location=device))
-        VAE.eval()
-        logger.info(f"Loaded VAE weights from {VAE_WEIGHTS}")
-    else:
-        logger.warning(f"VAE weights not found at {VAE_WEIGHTS}; VAE will be uninitialized for inference.")
-except Exception as e:
-    VAE = None
-    logger.exception("Failed to initialize VAE: %s", e)
+# -------------------------------------------------
+# Tokenization Helper
+def tokenize_text(text: str, vectorizer, seq_len: int, vocab_size: int):
+    tokens = vectorizer.build_tokenizer()(text.lower())
+    ids = [vectorizer.vocabulary_.get(tok, 0) for tok in tokens]  # 0 = UNK
+    ids = (ids + [0] * seq_len)[:seq_len]  # pad/truncate
+    return np.array(ids)
 
+# -------------------------------------------------
+# Load artifacts
 def _load(path: str):
     if not os.path.exists(path):
         raise FileNotFoundError(f"Required file not found: {path}")
     return joblib.load(path)
 
-# Load vectorizer / label encoders with clear errors
 try:
-    VECTORIZER = _load(VECTORIZER_PATH)
+    VECTORIZER: CountVectorizer = _load(VECTORIZER_PATH)
     LE_SUBJECT = _load(LE_SUBJECT_PATH)
     LE_TACTIC = _load(LE_TACTIC_PATH)
 except FileNotFoundError as e:
     logger.exception("Model artifact load error: %s", e)
-    # re-raise so app startup fails loudly and you can fix artifacts
     raise
 
 def load_models(head: str):
@@ -80,10 +80,22 @@ def load_models(head: str):
 SUBJECT_MODELS = load_models("subject")
 TACTIC_MODELS = load_models("tactic")
 
-# ---------------- Helper Functions ----------------
-def _featurize(texts):
-    return VECTORIZER.transform(texts)
+# -------------------------------------------------
+# Load VAE
+try:
+    VAE = ProofVAE(vocab_size=VOCAB_SIZE, seq_len=SEQ_LEN).to(device)
+    if os.path.exists(VAE_WEIGHTS):
+        VAE.load_state_dict(torch.load(VAE_WEIGHTS, map_location=device))
+        VAE.eval()
+        logger.info(f"Loaded VAE weights from {VAE_WEIGHTS}")
+    else:
+        logger.warning(f"VAE weights not found at {VAE_WEIGHTS}; VAE uninitialized.")
+except Exception as e:
+    VAE = None
+    logger.exception("Failed to initialize VAE: %s", e)
 
+# -------------------------------------------------
+# ML Helpers
 def id_to_name(cid, names_map, le=None):
     try:
         key = int(cid)
@@ -93,30 +105,20 @@ def id_to_name(cid, names_map, le=None):
         pass
     classes = getattr(le, "classes_", None)
     if classes is not None:
-        dt = getattr(classes, "dtype", None)
-        if hasattr(dt, "kind") and dt.kind in ("U", "S", "O"):
-            try:
-                return le.inverse_transform(np.array([cid]))[0]
-            except Exception:
-                pass
+        try:
+            return le.inverse_transform(np.array([cid]))[0]
+        except Exception:
+            pass
     return str(cid)
 
 def _probability(model, X) -> Optional[np.ndarray]:
     if hasattr(model, "predict_proba"):
-        try:
-            return model.predict_proba(X)[0]  # return full distribution
-        except Exception:
-            logger.debug("predict_proba failed for model %s", model, exc_info=True)
-            pass
+        return model.predict_proba(X)[0]
     if hasattr(model, "decision_function"):
-        try:
-            m = model.decision_function(X)
-            m = np.atleast_2d(m)
-            exp = np.exp(m - m.max())
-            return exp / exp.sum()
-        except Exception:
-            logger.debug("decision_function fallback failed for %s", model, exc_info=True)
-            pass
+        m = model.decision_function(X)
+        m = np.atleast_2d(m)
+        exp = np.exp(m - m.max())
+        return exp / exp.sum()
     return None
 
 def _predict_all(models, X, le, names_map):
@@ -142,20 +144,16 @@ def _predict_all(models, X, le, names_map):
     return out
 
 def _topk(model, X, le, names_map, k=3):
-    try:
-        probas = _probability(model, X)
-        classes = getattr(model, "classes_", None)
-        if probas is None or classes is None:
-            return []
-        idx = np.argsort(probas)[::-1][:k]
-        return [{
-            "id": int(classes[j]) if isinstance(classes[j], (int, np.integer)) else classes[j],
-            "label": id_to_name(classes[j], names_map, le),
-            "proba": float(probas[j]),
-        } for j in idx]
-    except Exception:
-        logger.exception("topk failure")
+    probas = _probability(model, X)
+    classes = getattr(model, "classes_", None)
+    if probas is None or classes is None:
         return []
+    idx = np.argsort(probas)[::-1][:k]
+    return [{
+        "id": int(classes[j]) if isinstance(classes[j], (int, np.integer)) else classes[j],
+        "label": id_to_name(classes[j], names_map, le),
+        "proba": float(probas[j]),
+    } for j in idx]
 
 def _plot_distribution(distribution: Dict[str, float], title: str) -> Optional[str]:
     if not distribution:
@@ -174,10 +172,10 @@ def _plot_distribution(distribution: Dict[str, float], title: str) -> Optional[s
     buf.seek(0)
     return base64.b64encode(buf.read()).decode("utf-8")
 
-# ---------------- FASTAPI ----------------
-app = FastAPI(title="Neural Proof Assistant - subjects & tactics + VAE")
+# -------------------------------------------------
+# FastAPI App
+app = FastAPI(title="Neural Proof Assistant")
 
-# CORS: add common dev origins (adjust for production)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -216,18 +214,9 @@ def predict(input: GoalInput):
     if not text:
         raise HTTPException(status_code=400, detail="Empty input")
 
-    # Featurize for sklearn models
-    try:
-        X = _featurize([text])
-    except Exception:
-        logger.exception("Featurization failed")
-        raise HTTPException(status_code=500, detail="Featurization failed")
-
-    all_subj = _predict_all(SUBJECT_MODELS, X, LE_SUBJECT, SUBJECT_ID2NAME) if SUBJECT_MODELS else {}
-    all_tac = _predict_all(TACTIC_MODELS, X, LE_TACTIC, TACTIC_NAMES) if TACTIC_MODELS else {}
-
-    if not all_subj and not all_tac:
-        raise HTTPException(status_code=503, detail="No models found!")
+    X = VECTORIZER.transform([text])
+    all_subj = _predict_all(SUBJECT_MODELS, X, LE_SUBJECT, SUBJECT_ID2NAME)
+    all_tac = _predict_all(TACTIC_MODELS, X, LE_TACTIC, TACTIC_NAMES)
 
     subj = os.path.splitext(CHOOSE_SUBJECT)[0]
     tac = os.path.splitext(CHOOSE_TACTIC)[0]
@@ -235,50 +224,31 @@ def predict(input: GoalInput):
     subj_top3 = _topk(SUBJECT_MODELS.get(subj), X, LE_SUBJECT, SUBJECT_ID2NAME, k=3)
     tac_top3 = _topk(TACTIC_MODELS.get(tac), X, LE_TACTIC, TACTIC_NAMES, k=3)
 
-    # VAE embedding — use encode() + reparameterize() to obtain z
     latent_vec = None
     if VAE is not None:
         try:
-            # TODO: replace tokenizer: map `text` -> token ids of length <= SEQ_LEN
-            # For now we pad/truncate a naive tokenization (placeholder)
-            # WARNING: this is a placeholder — replace with your tokenizer
-            toks = np.random.randint(0, VOCAB_SIZE, size=(1, SEQ_LEN))
-            tokens = torch.tensor(toks, dtype=torch.long, device=device)
+            ids = tokenize_text(text, VECTORIZER, SEQ_LEN, VOCAB_SIZE)
+            tokens = torch.tensor([ids], dtype=torch.long, device=device)
             with torch.no_grad():
-                mu, logvar = VAE.encode(tokens)         # mu/logvar shape: (1, latent_dim)
-                z = VAE.reparameterize(mu, logvar)     # (1, latent_dim)
+                mu, logvar = VAE.encode(tokens)
+                z = VAE.reparameterize(mu, logvar)
             latent_vec = z.cpu().numpy().tolist()
         except Exception:
             logger.exception("VAE embedding failed")
-            latent_vec = None
 
-    # Probability visualization charts (base64 PNGs)
-    subj_chart = None
-    tac_chart = None
-
-    # The structures in all_subj/all_tac map model-name->{"distribution":{label:prob,...}}
-    # Choose first available distribution for subject and tactic to plot.
-    try:
-        # find a distribution to visualize for subject
-        for m in all_subj.values():
-            dist = m.get("distribution", {})
-            if dist:
-                subj_chart = _plot_distribution(dist, "Subject probabilities")
-                break
-        # find a distribution to visualize for tactic
-        for m in all_tac.values():
-            dist = m.get("distribution", {})
-            if dist:
-                tac_chart = _plot_distribution(dist, "Tactic probabilities")
-                break
-    except Exception:
-        logger.exception("Chart generation failed")
+    subj_chart, tac_chart = None, None
+    for m in all_subj.values():
+        if m.get("distribution"):
+            subj_chart = _plot_distribution(m["distribution"], "Subject probabilities")
+            break
+    for m in all_tac.values():
+        if m.get("distribution"):
+            tac_chart = _plot_distribution(m["distribution"], "Tactic probabilities")
+            break
 
     return {
         "subject": subj_top3[0]["label"] if subj_top3 else None,
-        "subject_id": subj_top3[0]["id"] if subj_top3 else None,
         "tactic": tac_top3[0]["label"] if tac_top3 else None,
-        "tactic_id": tac_top3[0]["id"] if tac_top3 else None,
         "top3": {"subject": subj_top3, "tactic": tac_top3},
         "all": {"subject": all_subj, "tactic": all_tac},
         "vae_latent": latent_vec,
@@ -287,17 +257,14 @@ def predict(input: GoalInput):
 
 @app.post("/vae-embed")
 def vae_embed(input: GoalInput):
-    """Return a VAE latent embedding for the input text (inference-only).
-       NOTE: this uses a placeholder tokenization — replace with your tokenizer."""
     text = (input.goal or "").strip()
     if not text:
         raise HTTPException(status_code=400, detail="Empty input")
     if VAE is None:
         raise HTTPException(status_code=503, detail="VAE not available")
-
     try:
-        toks = np.random.randint(0, VOCAB_SIZE, size=(1, SEQ_LEN))
-        tokens = torch.tensor(toks, dtype=torch.long, device=device)
+        ids = tokenize_text(text, VECTORIZER, SEQ_LEN, VOCAB_SIZE)
+        tokens = torch.tensor([ids], dtype=torch.long, device=device)
         with torch.no_grad():
             mu, logvar = VAE.encode(tokens)
             z = VAE.reparameterize(mu, logvar)
@@ -305,3 +272,25 @@ def vae_embed(input: GoalInput):
     except Exception:
         logger.exception("VAE embed failed")
         raise HTTPException(status_code=500, detail="VAE embedding failed")
+
+@app.post("/vae-generate")
+def vae_generate(input: GoalInput):
+    text = (input.goal or "").strip()
+    if not text:
+        raise HTTPException(status_code=400, detail="Empty input")
+    if VAE is None:
+        raise HTTPException(status_code=503, detail="VAE not available")
+    try:
+        ids = tokenize_text(text, VECTORIZER, SEQ_LEN, VOCAB_SIZE)
+        tokens = torch.tensor([ids], dtype=torch.long, device=device)
+        with torch.no_grad():
+            mu, logvar = VAE.encode(tokens)
+            z = VAE.reparameterize(mu, logvar)
+            gen_ids = VAE.generate(z, max_length=50, start_token=1, end_token=2)
+
+        inv_vocab = {v: k for k, v in VECTORIZER.vocabulary_.items()}
+        gen_tokens = [inv_vocab.get(i, "<UNK>") for i in gen_ids]
+        return {"generated": " ".join(gen_tokens)}
+    except Exception:
+        logger.exception("VAE generation failed")
+        raise HTTPException(status_code=500, detail="VAE generation failed")
