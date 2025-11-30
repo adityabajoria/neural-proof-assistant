@@ -1,0 +1,17 @@
+{
+  "model_name": "all-MiniLM-L6-v2",
+  "embedding_dim": 384,
+  "classifier_type": "MLP (Neural Network)",
+  "num_classes": 7,
+  "classes": [
+    "Direct Proof",
+    "Proof by Contradiction",
+    "Mathematical Induction",
+    "Contrapositive",
+    "Proof by Construction",
+    "Proof by Cases",
+    "Proof by Exhaustion"
+  ],
+  "training_samples": 66,
+  "cv_accuracy": 0.7736263736263737
+}
