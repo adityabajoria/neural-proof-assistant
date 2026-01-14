@@ -298,11 +298,11 @@ export default function App() {
   const API_BASE = "https://neural-proof-assistant.fly.dev";
 
   useEffect(() => {
-    // Load demo proofs and techniques
-    //fetch(`${API_BASE}/demo-proofs`)
-      //.then((res) => res.json())
-      //.then((data) => setDemos(data.demos))
-      //.catch((err) => console.error("Failed to load demos:", err));
+    //Load demo proofs and techniques
+    fetch(`${API_BASE}/demo-proofs`)
+      .then((res) => res.json())
+      .then((data) => setDemos(data.demos))
+      .catch((err) => console.error("Failed to load demos:", err));
 
     fetch(`${API_BASE}/techniques`)
       .then((res) => res.json())
